@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" nextobjectid="28">
+ <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25" columns="5">
+  <image source="img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztlkkKACAMA4v0A/3/Z8WruNM2FT0MCEImxItCRAKGO4zuNJj5rYnkTxUe/Wo/N86WHVb8HMDvsT+CVb/H/oiddnItOuxmvu5Hvn8Ev3bfk7zvx/o1udGv2Rn97y5ki8YSbQ==
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAC8GDAAAAQ==
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAC8GDAAAAQ==
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAAC8GDAAAAQ==
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer">
+  <object id="4" name="OutZone" x="78" y="158" width="98" height="88">
+   <properties>
+    <property name="InZone" value="StartPointSheriff"/>
+    <property name="LevelZone" value="LevelSheriff"/>
+   </properties>
+  </object>
+  <object id="11" name="OutZone" x="480" y="118" width="95" height="140">
+   <properties>
+    <property name="InZone" value="StartPointSaloon"/>
+    <property name="LevelZone" value="LevelSaloon"/>
+   </properties>
+  </object>
+  <object id="12" name="OutZone" x="789" y="255" width="59" height="63">
+   <properties>
+    <property name="InZone" value="StartPointHome"/>
+    <property name="LevelZone" value="LevelHome"/>
+   </properties>
+  </object>
+  <object id="21" name="OutZone" x="99" y="593" width="81" height="81">
+   <properties>
+    <property name="InZone" value="StartPoint"/>
+    <property name="LevelZone" value="LevelIndian"/>
+   </properties>
+  </object>
+  <object id="24" name="OutZone" x="895" y="575" width="91" height="131.334">
+   <properties>
+    <property name="InZone" value="StartPointDesert"/>
+    <property name="LevelZone" value="LevelDesert"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="inZoneLayer">
+  <object id="14" name="InZone" x="98" y="301" width="32" height="32">
+   <properties>
+    <property name="StartPoint" value="StartPointWorld"/>
+   </properties>
+  </object>
+  <object id="19" name="InZone" x="832" y="651" width="50" height="50">
+   <properties>
+    <property name="StartPoint" value="OutLevelDesert"/>
+   </properties>
+  </object>
+  <object id="26" name="InZone" x="185.667" y="621.667" width="50" height="50">
+   <properties>
+    <property name="StartPoint" value="OutLevelIndian"/>
+   </properties>
+  </object>
+  <object id="27" name="InZone" x="93" y="354" width="69" height="46">
+   <properties>
+    <property name="StartPoint" value="OutLevelSheriff"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="enemyLayer"/>
+ <objectgroup name="itemLayer"/>
+</map>
