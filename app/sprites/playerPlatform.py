@@ -252,5 +252,10 @@ class PlayerPlatform(pygame.sprite.Sprite):
                     self.jumpState = JUMP
                     self.upPressed = False
 
+    def hurt(self):
+        if not self.isInvincible:
+            self.invincibleOnHit()
+            self.visualFlash()
+
 
 

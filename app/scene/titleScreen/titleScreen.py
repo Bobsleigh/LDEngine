@@ -26,8 +26,6 @@ class TitleScreen:
         self.menu = Menu(pygame.Rect(SCREEN_WIDTH / 2, SCREEN_HEIGHT * 12 / 16, SCREEN_WIDTH / 3, SCREEN_HEIGHT * 0.25))
         self.menu.addOption('Start', self.startGame)
         self.menu.addOption('Exit', sys.exit)
-        # self.menu.addOption('TitleScreen', self.startWorldMap)
-        # self.menu.addOption('Level 1', self.startFirstLevel)
 
         self.eventHandler = EventHandlerTitleScreen()
         self.drawer = Drawer()
@@ -47,8 +45,8 @@ class TitleScreen:
             self.drawer.draw(self.screen, None, self.menu.spritesMenu, None)  # Drawer in THIS file, below
 
     def startGame(self):
-        self.nextScene = WORLD_MAP
+        self.nextScene = PLATFORM_SCREEN
         self.sceneRunning = False
-        self.gameData.typeScene = WORLD_MAP
-        self.gameData.mapData = MapData("WorldMap", "StartPointWorld")
+        self.gameData.typeScene = PLATFORM_SCREEN
+        self.gameData.mapData = MapData("LevelSheriff", "StartPointWorld")
 
