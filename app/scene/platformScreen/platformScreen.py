@@ -6,8 +6,6 @@ from app.settings import *
 from app.sprites.playerPlatform import PlayerPlatform
 from app.scene.musicFactory import MusicFactory
 
-from app.sprites.GUI.dialogBox import DialogBox
-
 from app.mapData import MapData
 
 
@@ -29,9 +27,6 @@ class PlatformScreen:
         self.eventHandler = EventHandlerPlatformScreen(self.gameData)
         self.logicHandler = LogicHandlerPlatformScreen(self.screen, self.player, self.mapData)
         self.drawer = Drawer()
-
-        self.msg = DialogBox((10,10), (200,400), "Salut Vous!! JE SUI UN TOTOTOTO SALUT MANGE MANGE CACA PIPI")
-        self.mapData.spritesHUD.add(self.msg)
 
 
         MusicFactory(PLATFORM_SCREEN, self.mapData.nameMap)
