@@ -10,7 +10,7 @@ import random
 
 
 class EnemyShooter(Enemy):
-    def __init__(self, x, y, theMap, direction="Right"):
+    def __init__(self, x, y, theMap=None, direction="Right"):
         super().__init__(x, y)
 
         self.name = "enemyShooter"
@@ -37,8 +37,16 @@ class EnemyShooter(Enemy):
         self.imageIterShoot = random.randint(10,70)
         self.imageWaitNextShoot = 80
 
+        self.dictProperties = {'direction': self.setDirection}
+
     def setDirection(self, direction):
-        self.direction = direction
+        if direction is "Right":
+            self.direction = "Right"
+        else:
+            self.direction = "Left"
+
+    def setTheMap(self, theMap):
+        self.theMap = theMap
 
     def update(self):
 

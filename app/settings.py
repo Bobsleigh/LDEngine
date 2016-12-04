@@ -105,12 +105,6 @@ TAG_MARIE = 0
 
 # Load settings_local.py if exist
 try:
-    app_info = __import__('imp').find_module('app')
-    app = __import__('imp').load_module('app', *app_info)
-    __import__('imp').find_module('settings_local', app.__path__)
-    settingsLocalFound = True
+    from src.settings_local import *
 except ImportError:
-    settingsLocalFound = False
-
-if settingsLocalFound:
-    from app.settings_local import *
+    pass
