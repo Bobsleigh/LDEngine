@@ -12,9 +12,16 @@ class PlayerPlatform(pygame.sprite.Sprite):
 
         self.name = "player"
 
-        self.imageShapeRight = pygame.image.load(os.path.join('img', 'joueur_droite.png'))
-        self.imageShapeLeft = pygame.image.load(os.path.join('img', 'joueur_gauche.png'))
+        self.imageBase=pygame.image.load(os.path.join('img', 'joueur_droite.png'))
+
+        self.imageShapeLeft = None
+        self.imageShapeRight = None
+
+        self.setShapeImage()
         self.image = self.imageShapeRight
+
+        self.imageTransparent = pygame.Surface((1,1))
+        self.imageTransparent.set_colorkey(BLACK)
 
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -43,8 +50,9 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.lifeMax = 1
         self.lifeMaxCap = 5
         self.isInvincible = False
-        self.invincibleFrameCounter = 0
-        self.invincibleFrameDuration = 60
+        self.invincibleFrameCounter = [0,0] #Timer,flashes nb
+        self.invincibleTimer = 20 #Must be even number
+        self.invincibleNbFlashes = 5
 
         self.rightPressed = False
         self.leftPressed = False
@@ -64,6 +72,9 @@ class PlayerPlatform(pygame.sprite.Sprite):
 
         self.collisionMask = CollisionMask(self.rect.x + 3, self.rect.y, self.rect.width-6, self.rect.height)
 
+    def setShapeImage(self):
+        self.imageShapeLeft = pygame.transform.flip(self.imageBase, True, False)
+        self.imageShapeRight = self.imageBase
 
 
     def update(self):
@@ -134,15 +145,19 @@ class PlayerPlatform(pygame.sprite.Sprite):
 
     def invincibleOnHit(self):
         self.isInvincible = True
-        self.invincibleFrameCounter = 1
-        # self.visualFlash()
+        self.invincibleFrameCounter[0] = 1
 
     def invincibleUpdate(self):
-        if self.invincibleFrameCounter > 0 and self.invincibleFrameCounter < self.invincibleFrameDuration:
-            self.invincibleFrameCounter += 1
-        elif self.invincibleFrameCounter == self.invincibleFrameDuration:
+        if self.invincibleFrameCounter[0] > 0 and self.invincibleFrameCounter[1] < self.invincibleNbFlashes:
+            self.invincibleFrameCounter[0] += 1
+            if self.invincibleFrameCounter[0]== self.invincibleTimer:
+                self.invincibleFrameCounter[0] = 1
+                self.invincibleFrameCounter[1] +=1
+
+        elif self.invincibleFrameCounter[1] == self.invincibleNbFlashes:
             self.isInvincible = False
-            self.invincibleFrameCounter = 0
+            self.invincibleFrameCounter = [0,0]
+        print(self.invincibleFrameCounter)
         self.visualFlash()
 
     def dead(self):
@@ -156,30 +171,13 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.gainLife()
 
     def visualFlash(self):
-        if self.invincibleFrameCounter == 1:
-            self.imageShapeRight = self.imageTransparent
+        if self.invincibleFrameCounter[0] == 5:
             self.imageShapeLeft = self.imageTransparent
-            self.image = self.imageTransparent
-        elif self.invincibleFrameCounter == 5:
-            self.setShapeImage()
-        elif self.invincibleFrameCounter == 15:
             self.imageShapeRight = self.imageTransparent
-            self.imageShapeLeft = self.imageTransparent
             self.image = self.imageTransparent
-        elif self.invincibleFrameCounter == 20:
+        elif self.invincibleFrameCounter[0] == 9:
             self.setShapeImage()
-        elif self.invincibleFrameCounter == 30:
-            self.imageShapeRight = self.imageTransparent
-            self.imageShapeLeft = self.imageTransparent
-            self.image = self.imageTransparent
-        elif self.invincibleFrameCounter == 35:
-            self.setShapeImage()
-        elif self.invincibleFrameCounter == 45:
-            self.imageShapeRight = self.imageTransparent
-            self.imageShapeLeft = self.imageTransparent
-            self.image = self.imageTransparent
-        elif self.invincibleFrameCounter == 50:
-            self.setShapeImage()
+            self.update()
 
 
     def shootBullet(self):
