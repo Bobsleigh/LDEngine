@@ -31,6 +31,11 @@ class Enemy(pygame.sprite.Sprite):
         self.soundDead = pygame.mixer.Sound(os.path.join('music_pcm', 'Punch2.wav'))
         self.soundDead.set_volume(1)
 
+        self.dictProperties = {}
+
+    def setTheMap(self, theMap):
+        pass
+
     def update(self):
         pass
 

@@ -1,28 +1,21 @@
 from app.sprites.enemy.enemy import Enemy
 from app.sprites.enemy.enemyShooter import EnemyShooter
-from app.tools.functionTools import *
-
 
 class EnemyFactory:
     def __init__(self):
-        pass
+        self.dictEnemies = {'enemyBase':    Enemy,
+                            'enemyShooter': EnemyShooter}
 
-    def create(self, enemy, theMap=None):
-        eName = seekAtt(enemy, "name")
-        if eName == "enemyCactus":
-            return self.createEnemyCactus(enemy)
-        if eName == "enemyShooter":
-            return self.createEnemyShooter(enemy, theMap)
+    def create(self, tmxEnemy, theMap=None):
 
+        enemyName = tmxEnemy.name
+        if enemyName in self.dictEnemies:
+            enemy = self.dictEnemies[enemyName](tmxEnemy.x, tmxEnemy.y)
 
-    def createEnemyBase(self, enemy):
-        enemyCreated = Enemy(enemy.x, enemy.y)
-        return enemyCreated
+            for nameProp, prop in tmxEnemy.properties.items():
+                if nameProp in enemy.dictProperties:
+                    enemy.dictProperties[nameProp](prop)
 
-    def createEnemyShooter(self, enemy, theMap):
-        direction = seekAtt(enemy, "direction")
-
-        if direction is None:
-            return EnemyShooter(enemy.x, enemy.y, theMap)
-        else:
-            return EnemyShooter(enemy.x, enemy.y, theMap, direction)
+            enemy.setTheMap(theMap)
+            return enemy
+        return None
