@@ -46,6 +46,11 @@ class Bullet(Enemy):
         self.rect.x += self.speedx
         if self.animation is not None :
            next(self.animation)
+        self.updateCollisionMask()
+
+    def updateCollisionMask(self):
+        self.collisionMask.rect.x = self.rect.x
+        self.collisionMask.rect.y = self.rect.y
 
 
     # For animation testing by Marie. timer is the number of time between frame.
@@ -57,11 +62,16 @@ class Bullet(Enemy):
                     yield None
 
     def onCollision(self, collidedWith, sideOfCollision):
+        if TAG_MARIE==1:
+            print(collidedWith)
         if collidedWith == SOLID or collidedWith == SPIKE or collidedWith == SPRING:
-            self.kill()
+            self.detonate()
+
+    def hitEnemy(self):
+        self.detonate()
 
     def detonate(self):
-        pass
+        self.kill()
 
 class BeerBullet(Bullet):
     def __init__(self, x, y, direction=RIGHT, friendly=True):

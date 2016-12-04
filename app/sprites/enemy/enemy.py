@@ -39,3 +39,9 @@ class Enemy(pygame.sprite.Sprite):
     def update(self):
         pass
 
+    def isHit(self):
+        self.dead()
+
+    def dead(self):
+        self.kill()
+

@@ -188,6 +188,9 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.mapData.camera.add(bullet)
         self.mapData.allSprites.add(bullet)
         self.mapData.friendlyBullet.add(bullet)
+
+        if TAG_MARIE ==1:
+            print(bullet.isCollisionApplied)
         #self.soundBullet.play()
 
     def spring(self):

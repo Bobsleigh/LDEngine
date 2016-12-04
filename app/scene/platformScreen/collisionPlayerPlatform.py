@@ -174,7 +174,8 @@ class CollisionPlayerPlatform:
 def collisionBulletEnemy(bullet, map):
     collisionList = pygame.sprite.spritecollide(bullet, map.enemyGroup, False)
     for enemy in collisionList:
-        bullet.detonate()
+        enemy.isHit()
+        bullet.hitEnemy()
 
 def collisionGrenadeEnemy(grenade, map):
     collisionList = pygame.sprite.spritecollide(grenade, map.enemyGroup, False)

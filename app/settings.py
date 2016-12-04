@@ -105,6 +105,6 @@ TAG_MARIE = 0
 
 # Load settings_local.py if exist
 try:
-    from src.settings_local import *
+    from app.settings_local import *
 except ImportError:
     pass
