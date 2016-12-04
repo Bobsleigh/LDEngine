@@ -254,5 +254,33 @@ class PlayerPlatform(pygame.sprite.Sprite):
             self.invincibleOnHit()
             self.visualFlash()
 
+    def notify(self, event):
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                self.updateSpeedRight()
+                self.rightPressed = True
+            elif event.key == pygame.K_LEFT:
+                self.updateSpeedLeft()
+                self.leftPressed = True
+            elif event.key == pygame.K_UP:
+                self.updateSpeedUp()
+            elif event.key == pygame.K_DOWN:
+                self.updateSpeedDown()
+            elif event.key == pygame.K_SPACE:
+                self.jump()
+            elif event.key == pygame.K_LCTRL:
+                self.shootBullet()
 
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                self.rightPressed = False
+            elif event.key == pygame.K_LEFT:
+                self.leftPressed = False
 
+        self.updatePressedKeys()
+
+    def updatePressedKeys(self):
+        if self.rightPressed:
+            self.updateSpeedRight()
+        if self.leftPressed:
+            self.updateSpeedLeft()

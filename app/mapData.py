@@ -37,8 +37,9 @@ class MapData:
         for obj in self.tmxData.objects:
             if obj.type == "enemy":
                 enemy = eFactory.create(obj, self)
-                self.allSprites.add(enemy)
-                self.enemyGroup.add(enemy)
+                if enemy is not None:
+                    self.allSprites.add(enemy)
+                    self.enemyGroup.add(enemy)
 
 
             # if obj.type == "item":

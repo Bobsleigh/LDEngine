@@ -21,9 +21,10 @@ class PlatformScreen:
 
         self.mapData.allSprites.add(self.player)
         self.mapData.camera.add(self.player)
+        self.mapData.notifySet.add(self.player)
         self.camera = self.mapData.camera
 
-        self.eventHandler = EventHandlerPlatformScreen(self.player)
+        self.eventHandler = EventHandlerPlatformScreen(self.gameData)
         self.logicHandler = LogicHandlerPlatformScreen(self.screen, self.player, self.mapData)
         self.drawer = Drawer()
 
