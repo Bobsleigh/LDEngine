@@ -40,6 +40,7 @@ class Bullet(Enemy):
         self.animation = None
 
         self.friendly = friendly
+        self.isCollisionApplied = True
 
     def update(self):
         self.rect.x += self.speedx
@@ -57,7 +58,7 @@ class Bullet(Enemy):
 
     def onCollision(self, collidedWith, sideOfCollision):
         if collidedWith == SOLID or collidedWith == SPIKE or collidedWith == SPRING:
-            self.detonate()
+            self.kill()
 
     def detonate(self):
         pass
