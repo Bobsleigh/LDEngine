@@ -157,7 +157,6 @@ class PlayerPlatform(pygame.sprite.Sprite):
         elif self.invincibleFrameCounter[1] == self.invincibleNbFlashes:
             self.isInvincible = False
             self.invincibleFrameCounter = [0,0]
-        print(self.invincibleFrameCounter)
         self.visualFlash()
 
     def dead(self):
