@@ -91,6 +91,7 @@ class PlayerPlatform(pygame.sprite.Sprite):
 
         self.invincibleUpdate()
         self.updateCollisionMask()
+        self.updatePressedKeys()
 
     def capSpeed(self):
         if self.speedx > 0 and self.speedx > self.maxSpeedx:
@@ -276,8 +277,6 @@ class PlayerPlatform(pygame.sprite.Sprite):
                 self.rightPressed = False
             elif event.key == pygame.K_LEFT:
                 self.leftPressed = False
-
-        self.updatePressedKeys()
 
     def updatePressedKeys(self):
         if self.rightPressed:
