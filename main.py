@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     #icon = pygame.transform.scale(pygame.image.load(os.path.join('img', 'dragon.png')), (TILEDIMX, TILEDIMY))
     #pygame.display.set_icon(icon)
-    pygame.display.set_caption("I want my dragon")
+    pygame.display.set_caption("LDEngine")
 
     # Setup with gameData and the first scene
     sceneHandler = SceneHandler(screen)

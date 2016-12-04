@@ -27,9 +27,8 @@ class TitleScreen:
         self.menu.addOption('Start', self.startGame)
         self.menu.addOption('Exit', sys.exit)
 
-        self.eventHandler = EventHandlerTitleScreen()
+        self.eventHandler = EventHandlerTitleScreen(self.menu)
         self.drawer = Drawer()
-
 
         self.type = TITLE_SCREEN
         self.nextScene = None
@@ -41,8 +40,9 @@ class TitleScreen:
         self.sceneRunning = True
         while self.sceneRunning:
             self.eventHandler.eventHandle(self.menu.optionList, self.menu.selector)
-            self.menu.spritesMenu.update()  # This would be in the logic
-            self.drawer.draw(self.screen, None, self.menu.spritesMenu, None)  # Drawer in THIS file, below
+            self.menu.update()  # This would be in the logic
+            self.drawer.draw(self.screen, None, self.menu, None)  # Drawer in THIS file, below
+
 
     def startGame(self):
         self.nextScene = PLATFORM_SCREEN

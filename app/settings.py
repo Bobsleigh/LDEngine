@@ -3,6 +3,9 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+YELLOW = (160, 0, 160)
+GREY = (100, 100, 100)
 
 COLOR_POWER_BAR = (100,50,138)
 COLOR_POWER_BAR_EMPTY = (0,0,0,1)
@@ -80,6 +83,18 @@ RATIO = 5
 # Dimension tile base for icon
 TILEDIMX = 32
 TILEDIMY = 32
+
+#GUI settings
+DIALOG_TEXT_SIZE = 20
+INPUT_BOX_FONT = "Arial"
+INPUT_BOX_TEXT_SIZE = 20
+MENU_FONT = "Arial"
+MENU_FONT_COLOR = BLUE
+COLOR_MENU_1 = WHITE
+COLOR_MENU_2 = RED
+COLOR_MENU_SELECT_1 = GREEN
+COLOR_MENU_SELECT_2 = YELLOW
+COLOR_MENU_FONT_SELECT = GREY
 
 
 # If you add a Tag for debugging, you MUST set it here at 0 for everyone
