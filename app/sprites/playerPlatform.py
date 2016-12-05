@@ -162,7 +162,6 @@ class PlayerPlatform(pygame.sprite.Sprite):
 
     def dead(self):
         self.isAlive = False
-        #self.soundGetHit.play()
 
     def pickedPowerUpMaxHealth(self):
         self.gainLifeMax()
@@ -175,10 +174,12 @@ class PlayerPlatform(pygame.sprite.Sprite):
             self.imageShapeLeft = self.imageTransparent
             self.imageShapeRight = self.imageTransparent
             self.image = self.imageTransparent
-        elif self.invincibleFrameCounter[0] == 9:
+        elif self.invincibleFrameCounter[0] == 15:
             self.setShapeImage()
-            self.update()
-
+            if self.facingSide == RIGHT:
+                self.image = self.imageShapeRight
+            else:
+                self.image = self.imageShapeLeft
 
     def shootBullet(self):
         if self.facingSide == RIGHT:
