@@ -52,7 +52,7 @@ class LogicHandlerPlatformScreen:
 
     def applyFriction(self, allSprites):
         for sprite in allSprites:
-            if sprite.isPhysicsApplied == True or sprite.isFrictionApplied == True:
+            if sprite.isPhysicsApplied == True:
                 pass
                 if sprite.speedx > 0 and sprite.speedx - FRICTION > 0:
                     sprite.speedx -= FRICTION

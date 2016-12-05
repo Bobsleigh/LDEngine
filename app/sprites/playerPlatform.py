@@ -38,11 +38,14 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.maxSpeedx = 5
         self.maxSpeedyUp = 18
         self.maxSpeedyDown = 15
+        self.maxSpeedyUpClimbing = 6
+        self.maxSpeedyDownClimbing = 6
         self.accx = 2
         self.accy = 2
         self.jumpSpeed = -13
 
         self.isPhysicsApplied = True
+        self.isCollisionApplied = True
         self.jumpState = JUMP
         self.facingSide = RIGHT
 
@@ -56,6 +59,8 @@ class PlayerPlatform(pygame.sprite.Sprite):
 
         self.rightPressed = False
         self.leftPressed = False
+        self.upPressed = False
+        self.downPressed = False
 
 
         self.mapData = mapData
@@ -92,8 +97,15 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.invincibleUpdate()
         self.updateCollisionMask()
         self.updatePressedKeys()
+        self.updateJumpState()
 
     def capSpeed(self):
+        if self.jumpState == CLIMBING:
+            if self.speedy > 0 and self.speedy > self.maxSpeedyDownClimbing:
+                self.speedy = self.maxSpeedyDownClimbing
+            if self.speedy < 0 and self.speedy < -self.maxSpeedyUpClimbing:
+                self.speedy = -self.maxSpeedyUpClimbing
+
         if self.speedx > 0 and self.speedx > self.maxSpeedx:
             self.speedx = self.maxSpeedx
         if self.speedx < 0 and self.speedx < -self.maxSpeedx:
@@ -123,6 +135,14 @@ class PlayerPlatform(pygame.sprite.Sprite):
     def updateCollisionMask(self):
         self.collisionMask.rect.x = self.rect.x
         self.collisionMask.rect.y = self.rect.y
+
+    def updateJumpState(self):
+        if self.jumpState == CLIMBING:
+            self.isGravityApplied = False
+            self.isPhysicsApplied = False
+        else:
+            self.isGravityApplied = True
+            self.isPhysicsApplied = True
 
     def gainLife(self):
         if self.life < self.lifeMax:
@@ -248,7 +268,7 @@ class PlayerPlatform(pygame.sprite.Sprite):
                 if self.jumpState == GROUNDED:
                     self.jumpState = JUMP
 
-            if sideOfCollision == NONE:
+            if sideOfCollision == UP:
                 if self.jumpState == CLIMBING:
                     self.jumpState = JUMP
                     self.upPressed = False
@@ -286,3 +306,7 @@ class PlayerPlatform(pygame.sprite.Sprite):
             self.updateSpeedRight()
         if self.leftPressed:
             self.updateSpeedLeft()
+        if self.upPressed:
+            self.updateSpeedUp()
+        if self.downPressed:
+            self.updateSpeedDown()
