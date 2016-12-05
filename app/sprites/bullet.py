@@ -62,8 +62,6 @@ class Bullet(Enemy):
                     yield None
 
     def onCollision(self, collidedWith, sideOfCollision):
-        if TAG_MARIE==1:
-            print(collidedWith)
         if collidedWith == SOLID or collidedWith == SPIKE or collidedWith == SPRING:
             self.detonate()
 

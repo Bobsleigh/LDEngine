@@ -3,6 +3,7 @@ from app.scene.platformScreen.eventHandlerPlatformScreen import EventHandlerPlat
 from app.scene.platformScreen.logicHandlerPlatformScreen import LogicHandlerPlatformScreen
 from app.scene.drawer import Drawer
 from app.settings import *
+from app.sprites.GUI.scoreDisplay import ScoreDisplay
 from app.sprites.playerPlatform import PlayerPlatform
 from app.scene.musicFactory import MusicFactory
 
@@ -27,6 +28,11 @@ class PlatformScreen:
         self.eventHandler = EventHandlerPlatformScreen(self.gameData)
         self.logicHandler = LogicHandlerPlatformScreen(self.screen, self.player, self.mapData)
         self.drawer = Drawer()
+
+        # Pour fair afficher un score... en construction!
+
+        # self.score = ScoreDisplay()
+        # self.mapData.spritesHUD.add(self.score)
 
 
         MusicFactory(PLATFORM_SCREEN, self.mapData.nameMap)

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="3">
- <tileset firstgid="1" name="Set_1" tilewidth="32" tileheight="32" tilecount="25" columns="5">
-  <image source="img/Set_01.png" width="160" height="160"/>
- </tileset>
- <tileset firstgid="26" name="Set_2" tilewidth="32" tileheight="32" tilecount="25" columns="5">
-  <image source="img/Set_02.png" width="160" height="160"/>
+ <tileset firstgid="1" name="collision_set" tilewidth="32" tileheight="32" tilecount="50" columns="5">
+  <image source="img/collision_set.png" width="160" height="320"/>
  </tileset>
  <layer name="Collision_Layer" width="32" height="18">
   <data encoding="base64" compression="zlib">

@@ -95,7 +95,7 @@ COLOR_MENU_2 = RED
 COLOR_MENU_SELECT_1 = GREEN
 COLOR_MENU_SELECT_2 = YELLOW
 COLOR_MENU_FONT_SELECT = GREY
-
+HUD_FONT_COLOR = BLACK
 
 # If you add a Tag for debugging, you MUST set it here at 0 for everyone
 # You can turn your tag on in your own settings_local.py for personal use
