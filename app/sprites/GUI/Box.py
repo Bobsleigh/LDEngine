@@ -12,15 +12,15 @@ class Box(pygame.sprite.Sprite):
 
         TILEX = 32
         TILEY = 32
-        upLeft = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyUpLeft.bmp"))
-        upMid = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyUpMid.bmp"))
-        upRight = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyUpRight.bmp"))
-        midLeft = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyMidLeft.bmp"))
-        center = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyCenter.bmp"))
-        midRight = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyMidRight.bmp"))
-        downLeft = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyDownLeft.bmp"))
-        downMid = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyDownMid.bmp"))
-        downRight = pygame.image.load(os.path.join('img', 'BattleScreenUI', "GreyDownRight.bmp"))
+        upLeft = pygame.image.load(os.path.join('img', 'GUI', "GreyUpLeft.bmp"))
+        upMid = pygame.image.load(os.path.join('img', 'GUI', "GreyUpMid.bmp"))
+        upRight = pygame.image.load(os.path.join('img', 'GUI', "GreyUpRight.bmp"))
+        midLeft = pygame.image.load(os.path.join('img', 'GUI', "GreyMidLeft.bmp"))
+        center = pygame.image.load(os.path.join('img', 'GUI', "GreyCenter.bmp"))
+        midRight = pygame.image.load(os.path.join('img', 'GUI', "GreyMidRight.bmp"))
+        downLeft = pygame.image.load(os.path.join('img', 'GUI', "GreyDownLeft.bmp"))
+        downMid = pygame.image.load(os.path.join('img', 'GUI', "GreyDownMid.bmp"))
+        downRight = pygame.image.load(os.path.join('img', 'GUI', "GreyDownRight.bmp"))
 
         self.box = pygame.Surface((x, y))
 

@@ -10,7 +10,7 @@ class DialogBox(pygame.sprite.Sprite):
 
         self.marginX = 10
         self.marginY = 10
-        self.spaceBetweenLines = 0
+        self.spaceBetweenLines = 20
 
         self.box = Box(pos,size)
 
@@ -61,7 +61,10 @@ class DialogBox(pygame.sprite.Sprite):
         while i < len(lineList):
             renderSize = self.arial.size(lineList[i])
             render = self.arial.render(lineList[i], False, BLACK)
-            self.box.box.blit(render, (self.rect.x + self.marginX, self.rect.y + self.marginY + self.spaceBetweenLines + (renderSize[1] * (i-1))))
+            if i == 0:
+                self.box.box.blit(render, (self.rect.x + self.marginX, self.rect.y + self.marginY))
+            else:
+                self.box.box.blit(render, (self.rect.x + self.marginX, self.rect.y + self.marginY + (self.spaceBetweenLines + renderSize[1]) * (i)))
             i += 1
 
 

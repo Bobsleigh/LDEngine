@@ -28,6 +28,7 @@ class PlatformScreen:
         self.logicHandler = LogicHandlerPlatformScreen(self.screen, self.player, self.mapData)
         self.drawer = Drawer()
 
+
         MusicFactory(PLATFORM_SCREEN, self.mapData.nameMap)
 
 
@@ -60,4 +61,3 @@ class PlatformScreen:
     def backToWorldMap(self):
         newMapData = MapData('WorldMap', 'StartPointWorld')
         self.checkNewMap(newMapData)
-

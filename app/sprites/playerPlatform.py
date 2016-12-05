@@ -214,7 +214,7 @@ class PlayerPlatform(pygame.sprite.Sprite):
             if sideOfCollision == UP:
                 # Coller le player sur le plafond
                 while self.mapData.tmxData.get_tile_gid((self.collisionMask.rect.left + 1) / self.mapData.tmxData.tilewidth,
-                                               (self.collisionMask.rect.top) / self.mapData.tmxData.tileHeight,
+                                               (self.collisionMask.rect.top) / self.mapData.tmxData.tileheight,
                                                COLLISION_LAYER) != SOLID and self.mapData.tmxData.get_tile_gid(
                                                 self.collisionMask.rect.right / self.mapData.tmxData.tilewidth,
                                                 (self.collisionMask.rect.top) / self.mapData.tmxData.tileheight, COLLISION_LAYER) != SOLID:

@@ -102,6 +102,7 @@ COLOR_MENU_FONT_SELECT = GREY
 
 TAG_BP = 0
 TAG_MARIE = 0
+TAG_PHIL = 0
 
 # Load settings_local.py if exist
 try:
