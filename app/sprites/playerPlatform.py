@@ -44,7 +44,9 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.accy = 2
         self.jumpSpeed = -13
 
-        self.isPhysicsApplied = True
+        self.isPhysicsApplied = False
+        self.isGravityApplied = True
+        self.isFrictionApplied = True
         self.isCollisionApplied = True
         self.jumpState = JUMP
         self.facingSide = RIGHT
@@ -127,10 +129,12 @@ class PlayerPlatform(pygame.sprite.Sprite):
         self.speedx -= self.accx
 
     def updateSpeedUp(self):
-        self.speedy -= self.accy
+        if self.jumpState == CLIMBING:
+            self.speedy -= self.accy
 
     def updateSpeedDown(self):
-        self.speedy += self.accy
+        if self.jumpState == CLIMBING:
+            self.speedy += self.accy
 
     def updateCollisionMask(self):
         self.collisionMask.rect.x = self.rect.x
@@ -139,10 +143,8 @@ class PlayerPlatform(pygame.sprite.Sprite):
     def updateJumpState(self):
         if self.jumpState == CLIMBING:
             self.isGravityApplied = False
-            self.isPhysicsApplied = False
         else:
             self.isGravityApplied = True
-            self.isPhysicsApplied = True
 
     def gainLife(self):
         if self.life < self.lifeMax:
@@ -289,8 +291,10 @@ class PlayerPlatform(pygame.sprite.Sprite):
                 self.leftPressed = True
             elif event.key == pygame.K_UP:
                 self.updateSpeedUp()
+                self.upPressed = True
             elif event.key == pygame.K_DOWN:
                 self.updateSpeedDown()
+                self.downPressed = True
             elif event.key == pygame.K_SPACE:
                 self.jump()
             elif event.key == pygame.K_LCTRL:
@@ -301,6 +305,10 @@ class PlayerPlatform(pygame.sprite.Sprite):
                 self.rightPressed = False
             elif event.key == pygame.K_LEFT:
                 self.leftPressed = False
+            elif event.key == pygame.K_UP:
+                self.upPressed = False
+            elif event.key == pygame.K_DOWN:
+                self.downPressed = False
 
     def updatePressedKeys(self):
         if self.rightPressed:

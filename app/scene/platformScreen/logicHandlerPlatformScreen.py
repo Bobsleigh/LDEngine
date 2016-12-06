@@ -52,7 +52,7 @@ class LogicHandlerPlatformScreen:
 
     def applyFriction(self, allSprites):
         for sprite in allSprites:
-            if sprite.isPhysicsApplied == True:
+            if sprite.isPhysicsApplied == True or sprite.isFrictionApplied == True:
                 pass
                 if sprite.speedx > 0 and sprite.speedx - FRICTION > 0:
                     sprite.speedx -= FRICTION
@@ -63,6 +63,17 @@ class LogicHandlerPlatformScreen:
                     sprite.speedx += FRICTION
                 elif sprite.speedx < 0:
                     sprite.speedx = 0
+
+            if sprite.name == "player" and sprite.isFrictionApplied == True and sprite.jumpState == CLIMBING:  #TODO: Put the climbing friction code in the player instead of here. Maybe the whole friction code.
+                if sprite.speedy > 0 and sprite.speedy - FRICTION > 0:
+                    sprite.speedy -= FRICTION
+                elif sprite.speedy > 0:
+                    sprite.speedy = 0
+
+                if sprite.speedy < 0 and sprite.speedy + FRICTION < 0:
+                    sprite.speedy += FRICTION
+                elif sprite.speedy < 0:
+                    sprite.speedy = 0
 
     def handleBullets(self, mapData, player):
         for bullet in mapData.friendlyBullet:
