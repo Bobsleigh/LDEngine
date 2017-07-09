@@ -1,7 +1,6 @@
 import pygame
-import os
-from app.settings import *
-from app.sprites.GUI.MessageBox import MessageBox
+
+from ldLib.GUI.PhilOldStuff import MessageBox
 
 
 class Button(pygame.sprite.Sprite):

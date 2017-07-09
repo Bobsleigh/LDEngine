@@ -1,7 +1,7 @@
 import pygame
 
-from app.sprites.GUI.menu.option import Option
-from app.sprites.GUI.menu.selector import Selector
+from ldLib.GUI.menu.option import Option
+from ldLib.GUI.menu.selector import Selector
 from app.settings import *
 
 

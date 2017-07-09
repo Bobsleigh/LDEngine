@@ -3,7 +3,6 @@ from app.scene.platformScreen.eventHandlerPlatformScreen import EventHandlerPlat
 from app.scene.platformScreen.logicHandlerPlatformScreen import LogicHandlerPlatformScreen
 from app.scene.drawer import Drawer
 from app.settings import *
-from app.sprites.GUI.scoreDisplay import ScoreDisplay
 from app.sprites.playerPlatform import PlayerPlatform
 from app.scene.musicFactory import MusicFactory
 

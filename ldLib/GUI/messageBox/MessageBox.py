@@ -1,13 +1,13 @@
 import pygame
 from app.settings import *
 
-from app.tools.messageBox.textLine import TextLine
+from ldLib.GUI.messageBox.TextLine import TextLine
 
 
 #For a very short message only
 
 class MessageBox(pygame.sprite.Sprite):
-    def __init__(self, width, height, centerx, centery, fontSize=20):
+    def __init__(self, x, y, width, height, border = 5,fontSize=20):
         super().__init__()
 
         self.textList = []
@@ -16,12 +16,12 @@ class MessageBox(pygame.sprite.Sprite):
 
         self.image = pygame.Surface([width, height])
         self.rect = self.image.get_rect()
-        self.rect.center = (centerx,centery)
+        self.rect.x = x
+        self.rect.y = y
 
-        self.button = pygame.Rect(0, 0, 0, 0)
-        self.button = self.rect.inflate(-self.image.get_height() * 0.1, -self.image.get_height() * 0.1)
-        self.button.x = self.image.get_height() * 0.05
-        self.button.y = self.image.get_height() * 0.05
+        self.border = border
+
+        self.interior = pygame.Rect(self.border, self.border, width-2*self.border, height-2*self.border)
 
         self.textPos = [0,0]
 
@@ -30,12 +30,12 @@ class MessageBox(pygame.sprite.Sprite):
         self.color2 = COLOR_MENU_2
 
         self.image.fill(self.color2)
-        self.image.fill(self.color1, self.button)
+        self.image.fill(self.color1, self.interior)
 
     def update(self):
         self.updateText()
         self.image.fill(self.color2)
-        self.image.fill(self.color1, self.button)
+        self.image.fill(self.color1, self.interior)
 
         #Update message
         self.textHeight = 0

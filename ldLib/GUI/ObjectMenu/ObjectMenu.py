@@ -1,12 +1,11 @@
 __author__ = 'Bobsleigh'
 
-
 import pygame
-from app.settings import *
-from app.sprites.GUI.ObjectMenu.ObjectOption import ObjectOption
-from app.sprites.GUI.ObjectMenu.ObjectSelector import ObjectSelector
 
-from app.tools.messageBox.textLine import TextLine
+from app.settings import *
+from ldLib.GUI.ObjectMenu.ObjectOption import ObjectOption
+from ldLib.GUI.ObjectMenu.ObjectSelector import ObjectSelector
+
 
 #For a very short message only
 

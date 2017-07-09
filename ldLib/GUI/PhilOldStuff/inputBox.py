@@ -1,8 +1,9 @@
 # input lib
-from pygame.locals import *
-from app.sprites.GUI.Box import Box
-from app.settings import *
 import pygame
+
+from app.settings import *
+from ldLib.GUI import Box
+
 
 class InputBox(pygame.sprite.Sprite):
     def __init__(self, pos, size):

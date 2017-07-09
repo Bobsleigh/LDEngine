@@ -4,7 +4,7 @@ import sys
 
 import pygame
 
-from app.sprites.GUI.menu.menu import Menu
+from ldLib.GUI.menu.menu import Menu
 from app.scene.titleScreen.eventHandlerTitleScreen import EventHandlerTitleScreen
 from app.mapData import MapData
 from app.settings import *
