@@ -29,3 +29,5 @@ pip-log.txt
 # local code
 *_local
 *_local.*
+
+*bmp
