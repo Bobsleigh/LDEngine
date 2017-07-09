@@ -11,17 +11,17 @@ class Scene:
         self.nextScene = None
 
         self.screen = screen
-        self.data = self.gameData.data
-        self.player = self.gameData.data.player
+        self.sceneData = self.gameData.sceneData
+        self.player = self.gameData.sceneData.player
 
         if self.player != None:
-            self.data.allSprites.add(self.player)
-            self.data.notifySet.add(self.player)
+            self.sceneData.allSprites.add(self.player)
+            self.sceneData.notifySet.add(self.player)
 
-        if self.data.camera != None:
-            self.camera = self.data.camera
+        if self.sceneData.camera != None:
+            self.camera = self.sceneData.camera
             if self.player != None:
-                self.data.camera.add(self.player)
+                self.sceneData.camera.add(self.player)
         else:
             self.camera = None
 
@@ -32,13 +32,13 @@ class Scene:
     def mainLoop(self):
         self.sceneRunning = True
         while self.sceneRunning:
-            self.eventHandler.eventHandle(self.data.notifySet)
+            self.eventHandler.eventHandle(self.sceneData.notifySet)
             self.logicHandler.handle()
-            if self.data.camera == None:
-                self.drawer.draw(self.screen, self.data.allSprites, self.data.spritesHUD, self.data.spritesBackGround, self.player)
+            if self.sceneData.camera == None:
+                self.drawer.draw(self.screen, self.sceneData.allSprites, self.sceneData.spritesHUD, self.sceneData.spritesBackGround, self.player)
             else:
-                self.drawer.draw(self.screen, self.data.camera, self.data.spritesHUD, self.data.spritesBackGround, self.player)
-            self.nextScene = self.data.nextScene
+                self.drawer.draw(self.screen, self.sceneData.camera, self.sceneData.spritesHUD, self.sceneData.spritesBackGround, self.player)
+            self.nextScene = self.sceneData.nextScene
             if self.nextScene != None:
                 self.sceneRunning = False
 

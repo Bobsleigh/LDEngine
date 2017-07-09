@@ -1,7 +1,7 @@
 from app.mapData import MapData
 from app.sprites.bullet import *
 from app.settings import *
-from app.scene.platformScreen.collisionPlayerPlatform import CollisionPlayerPlatform
+from ldLib.collision.collisionNotifySprite import *
 from app.tools.functionTools import *
 import pygame
 
