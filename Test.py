@@ -1,3 +1,6 @@
+from FeatureTests.TileCollisions.TestSceneData import TestSceneData
+from FeatureTests.TileCollisions.TestSceneLogicHandler import TestSceneLogicHandler
+
 __author__ = 'Bobsleigh'
 
 import os
@@ -6,10 +9,10 @@ import sys
 import pygame
 
 from ldLib.scene.Scene import Scene
-from ldLib.scene.LogicHandler import LogicHandler
 from ldLib.scene.GameData import GameData
-from ldLib.scene.SceneData import SceneData
 from app.settings import *
+
+
 
 if __name__ == '__main__':
     #Code to check if the code is running from a PyInstaller --onefile .exe
@@ -33,6 +36,7 @@ if __name__ == '__main__':
 
     # Create the test scene
     gameData = GameData()
-    gameData.sceneData = SceneData()
-    logicHandler = LogicHandler(gameData)
+    gameData.sceneData = TestSceneData()
+    logicHandler = TestSceneLogicHandler(gameData)
     testScene = Scene(screen, gameData, logicHandler)
+    testScene.run()

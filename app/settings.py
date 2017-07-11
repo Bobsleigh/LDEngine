@@ -96,7 +96,18 @@ COLOR_MENU_2 = RED
 COLOR_MENU_SELECT_1 = GREEN
 COLOR_MENU_SELECT_2 = YELLOW
 COLOR_MENU_FONT_SELECT = GREY
-HUD_FONT_COLOR = BLACK
+COLORKEY = (1, 1, 1)
+
+HUD_FONT_COLOR = COLOR_MENU_FONTS
+HUD_FONT_SIZE = 20
+HUD_HEIGHT = 40
+HUD_COLOR_1 = COLOR_MENU_1
+HUD_COLOR_2 = COLOR_MENU_2
+
+# To get which mouse button is pressed.
+MOUSE_LEFT = 1
+MOUSE_RIGHT = 3
+
 
 # If you add a Tag for debugging, you MUST set it here at 0 for everyone
 # You can turn your tag on in your own settings_local.py for personal use

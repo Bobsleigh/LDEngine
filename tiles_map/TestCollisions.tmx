@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="5">
+ <tileset firstgid="1" name="Set_01" tilewidth="32" tileheight="32" tilecount="25">
+  <image source="../../LD35/tiles_map/img/Set_01.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="26" name="collision_set" tilewidth="32" tileheight="32" tilecount="50">
+  <image source="img/collision_set.png" width="160" height="320"/>
+ </tileset>
+ <layer name="Collision_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJyTZmBgkB5gPFBg1H7i7KeVG2ltP6F0Rg37CcnR2n5C+gbSfmLMRTebnvlhqNtPqVup4X9i1ROb/qgV/sSYO1jifyTWvYMFAADR2gzE
+  </data>
+ </layer>
+ <layer name="Background" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <layer name="Terrain" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJxjY2BgYBtgzDJAeNR+4uynlRtpbT+hdEYN+wnJ0dr+gfY/teOfnvlhqNtPqVup4X9i1ROb/qgV/sSYOxjin3EA8UDWPYMFAwB/uAlY
+  </data>
+ </layer>
+ <layer name="Sprite_Layer" width="32" height="18">
+  <data encoding="base64" compression="zlib">
+   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+  </data>
+ </layer>
+ <objectgroup name="outZoneLayer"/>
+ <objectgroup name="inZoneLayer">
+  <object id="4" name="InZone" x="355.5" y="420" width="33" height="30">
+   <properties>
+    <property name="StartPoint" value="StartPointWorld"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="enemyLayer"/>
+ <objectgroup name="itemLayer"/>
+</map>
