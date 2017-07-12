@@ -14,6 +14,7 @@ class TestSceneLogicHandler(LogicHandler):
         super().handle()
         self.physics.update()
 
+
     def handleCollision(self):
         for sprite in self.gameData.sceneData.allSprites:
             collisionNotifySprite(sprite, SOLID, self.gameData.sceneData)

@@ -8,6 +8,7 @@ class TestScenePhysics:
 
     def update(self):
         self.applyFriction(self.sceneData.allSprites)
+        self.applyGravity(self.sceneData.allSprites)
 
     def applyFriction(self, allSprites):
         for sprite in allSprites:
@@ -35,3 +36,12 @@ class TestScenePhysics:
                         sprite.speedy = 0
             except AttributeError:
                 pass
+
+    def applyGravity(self, allSprites):
+        for sprite in allSprites:
+            try:
+                if sprite.isGravityApplied == True:
+                    sprite.speedy += GRAVITY
+            except AttributeError:
+                pass
+

@@ -42,6 +42,7 @@ class PlayerTest(pygame.sprite.Sprite):
         self.accy = 2
 
         self.isFrictionApplied = True
+        self.isGravityApplied = True
         self.isCollisionApplied = True
         self.facingSide = RIGHT
         self.friendly = True
@@ -96,7 +97,6 @@ class PlayerTest(pygame.sprite.Sprite):
             else:
                 self.x = (self.x // self.mapData.tmxData.tilewidth + 1) * self.mapData.tmxData.tilewidth
             self.collisionMask.rect.x = self.x
-            print("X")
 
     def moveY(self):
         self.y += self.speedy
@@ -107,7 +107,6 @@ class PlayerTest(pygame.sprite.Sprite):
             else:
                 self.y = (self.y // self.mapData.tmxData.tileheight + 1) * self.mapData.tmxData.tileheight
             self.collisionMask.rect.y = self.y
-            print("Y")
 
     def capSpeed(self):
         if self.speedx > 0 and self.speedx > self.maxSpeedx:
