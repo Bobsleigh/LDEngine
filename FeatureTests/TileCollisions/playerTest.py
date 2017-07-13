@@ -6,7 +6,9 @@ from app.settings import *
 from ldLib.collision.collisionMask import CollisionMask
 from ldLib.collision.collisionTile import collisionWithTile
 from app.tools.imageBox import *
-
+from ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
+from ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
+from ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
 
 class PlayerTest(pygame.sprite.Sprite):
     def __init__(self, x, y, sceneData, max_health=10):
@@ -37,9 +39,11 @@ class PlayerTest(pygame.sprite.Sprite):
         self.speedx = 0
         self.speedy = 0
         self.maxSpeedx = 5
-        self.maxSpeedy = 5
+        self.maxSpeedyUp = 25
+        self.maxSpeedyDown = 10
         self.accx = 2
         self.accy = 2
+        self.springJumpSpeed = 25
 
         self.isFrictionApplied = True
         self.isGravityApplied = True
@@ -62,6 +66,10 @@ class PlayerTest(pygame.sprite.Sprite):
         self.isAlive = True
 
         self.collisionMask = CollisionMask(self.rect.x, self.rect.y, self.rect.width, self.rect.height)
+        self.collisionRules = []
+        self.collisionRules.append(CollisionWithSolid())
+        self.collisionRules.append(CollisionWithSpring())
+        self.collisionRules.append(CollisionWithSpike())
 
     def setShapeImage(self):
         self.imageShapeLeft = pygame.transform.flip(self.imageBase, True, False)
@@ -91,32 +99,24 @@ class PlayerTest(pygame.sprite.Sprite):
     def moveX(self):
         self.x += self.speedx
         self.collisionMask.rect.x = self.x
-        if collisionWithTile(self, SOLID, self.mapData):
-            if self.speedx > 0:
-                self.x = ((self.x + self.collisionMask.rect.width) // self.mapData.tmxData.tilewidth) * self.mapData.tmxData.tilewidth - self.collisionMask.rect.width
-            else:
-                self.x = (self.x // self.mapData.tmxData.tilewidth + 1) * self.mapData.tmxData.tilewidth
-            self.collisionMask.rect.x = self.x
+        for rule in self.collisionRules:
+            rule.onMoveX(self)
 
     def moveY(self):
         self.y += self.speedy
         self.collisionMask.rect.y = self.y
-        if collisionWithTile(self, SOLID, self.mapData):
-            if self.speedy > 0:
-                self.y = ((self.y + self.collisionMask.rect.height) // self.mapData.tmxData.tileheight) * self.mapData.tmxData.tileheight - self.collisionMask.rect.height
-            else:
-                self.y = (self.y // self.mapData.tmxData.tileheight + 1) * self.mapData.tmxData.tileheight
-            self.collisionMask.rect.y = self.y
+        for rule in self.collisionRules:
+            rule.onMoveY(self)
 
     def capSpeed(self):
         if self.speedx > 0 and self.speedx > self.maxSpeedx:
             self.speedx = self.maxSpeedx
         if self.speedx < 0 and self.speedx < -self.maxSpeedx:
             self.speedx = -self.maxSpeedx
-        if self.speedy > 0 and self.speedy > self.maxSpeedy:
-            self.speedy = self.maxSpeedy
-        if self.speedy < 0 and self.speedy < -self.maxSpeedy:
-            self.speedy = -self.maxSpeedy
+        if self.speedy > 0 and self.speedy > self.maxSpeedyDown:
+            self.speedy = self.maxSpeedyDown
+        if self.speedy < 0 and self.speedy < -self.maxSpeedyUp:
+            self.speedy = -self.maxSpeedyUp
 
     def updateSpeedRight(self):
         self.speedx += self.accx
@@ -140,6 +140,9 @@ class PlayerTest(pygame.sprite.Sprite):
 
     def dead(self):
         self.isAlive = False
+
+    def onSpike(self):
+        self.kill()
 
     def onCollision(self, collidedWith, sideOfCollision,limit=0):
         if collidedWith == SOLID:
