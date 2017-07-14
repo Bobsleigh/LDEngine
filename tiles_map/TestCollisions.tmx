@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="18" tilewidth="32" tileheight="32" nextobjectid="5">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="18" tilewidth="32" tileheight="32" nextobjectid="5">
  <tileset firstgid="1" name="Set_01" tilewidth="32" tileheight="32" tilecount="25">
   <image source="../../LD35/tiles_map/img/Set_01.png" width="160" height="160"/>
  </tileset>
  <tileset firstgid="26" name="collision_set" tilewidth="32" tileheight="32" tilecount="50">
   <image source="img/collision_set.png" width="160" height="320"/>
  </tileset>
- <layer name="Collision_Layer" width="32" height="18">
+ <layer name="Collision_Layer" width="80" height="18">
   <data encoding="base64" compression="zlib">
-   eJyTYmBgkAZiGSCWBWKpQYDpBeht31C1n1ZupLX9hNIVNewnJEdr+wnpG0j7iTEX3eyBzv9DyX5K3UoN/xOrntj0R63wJ8ZcZPtl0NRJU8kd+MBA17MDWffAAMgNyO0PegMAw3gNXg==
+   eJztmFEKgCAQRPcc6t7/mumH4EeZsqNpzoP5ydroMSjkRMTHhBiNcYw5pA36skF/Nlr9/c2xguaM9mfZV1Vw33k3GwHC39sa/bF/T6y8/+3qb5WzYqQ/FLv608bUZiOw+hvp+gR/Pfefcn6gOmWdO9Nfb38zpb9QXEv4ynOhsrYD6P7Njv/w3egQG7kP+f8p6eMC8EcdWQ==
   </data>
  </layer>
- <layer name="Background" width="32" height="18">
+ <layer name="Background" width="80" height="18">
   <data encoding="base64" compression="zlib">
-   eJxjYWBgYBnFo3gUj+JRPIpH8SgeQRgAnVgJAQ==
+   eJztwzENAAAMBKEb3r/mmugICaumqqqqqqrPD3JTFoE=
   </data>
  </layer>
- <layer name="Terrain" width="32" height="18">
+ <layer name="Terrain" width="80" height="18">
   <data encoding="base64" compression="zlib">
-   eJxjY2BgYBukmIXGmF72DHX7aeVGWttPKD1Rw35CcrS2f6D9T+34p2d+GOr2U+pWavifWPXEpj9qhT8x5iLbz46mjoNO8c84gHgg657BggHymAlr
+   eJztmEEKwCAMBFMs2v+/2FOhBY1aN1pxB/akBBwSBb2IeMYkp3FWZ5Qn+qO/FLX+rBzPwoHqWPsr3acaTnDnTNVGgPBXWqM/9l+OP99/q/ob+R5rWPpDsao/VxmtNoJef72uNXbw17J/l/cDNb81dTVG+mvt35unvyDvc16SdxOUNdT8WoLsv4P5nJl/B7N7EAX99REBTB4LYA==
   </data>
  </layer>
- <layer name="Sprite_Layer" width="32" height="18">
+ <layer name="Sprite_Layer" width="80" height="18">
   <data encoding="base64" compression="zlib">
-   eJztwQEBAAAAgiD/r25IQAEAfBkJAAAB
+   eJztwTEBAAAAwqD1T20JT6AAAAAAAOBvFoAAAQ==
   </data>
  </layer>
  <objectgroup name="outZoneLayer"/>
  <objectgroup name="inZoneLayer">
-  <object id="4" name="InZone" x="355.5" y="420" width="33" height="30">
+  <object id="4" name="InZone" x="1008.5" y="398" width="33" height="30">
    <properties>
     <property name="StartPoint" value="StartPointWorld"/>
    </properties>

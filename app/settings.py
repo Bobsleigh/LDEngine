@@ -63,7 +63,7 @@ SOLID = 1 #Booléen de GID pour collision
 SPIKE = 2
 SPRING = 3
 LADDER = 4
-NONE = 5 #Pour identifier qu'il n'y a eu aucune collision
+NONE = 0 #Pour identifier qu'il n'y a eu aucune collision
 
 #Player jump states
 GROUNDED = 0

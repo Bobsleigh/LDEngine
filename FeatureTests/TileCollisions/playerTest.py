@@ -9,6 +9,9 @@ from app.tools.imageBox import *
 from ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
 from ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
 from ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
+from ldLib.collision.CollisionRules.CollisionWithLadder import CollisionWithLadder
+from ldLib.collision.CollisionRules.CollisionWithNothing import CollisionWithNothing
+from ldLib.Sprites.Player.IdleState import IdleState
 
 class PlayerTest(pygame.sprite.Sprite):
     def __init__(self, x, y, sceneData, max_health=10):
@@ -43,6 +46,7 @@ class PlayerTest(pygame.sprite.Sprite):
         self.maxSpeedyDown = 10
         self.accx = 2
         self.accy = 2
+        self.jumpSpeed = 15
         self.springJumpSpeed = 25
 
         self.isFrictionApplied = True
@@ -67,9 +71,15 @@ class PlayerTest(pygame.sprite.Sprite):
 
         self.collisionMask = CollisionMask(self.rect.x, self.rect.y, self.rect.width, self.rect.height)
         self.collisionRules = []
+        self.collisionRules.append(CollisionWithNothing())  # Gotta be first in the list to work properly
         self.collisionRules.append(CollisionWithSolid())
         self.collisionRules.append(CollisionWithSpring())
         self.collisionRules.append(CollisionWithSpike())
+        self.collisionRules.append(CollisionWithLadder())
+
+
+        self._state = IdleState()
+        # self.nextState = None
 
     def setShapeImage(self):
         self.imageShapeLeft = pygame.transform.flip(self.imageBase, True, False)
@@ -171,52 +181,24 @@ class PlayerTest(pygame.sprite.Sprite):
                 self.speedy = 0
 
     def notify(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
-                self.updateSpeedRight()
-                self.rightPressed = True
-            elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
-                self.updateSpeedLeft()
-                self.leftPressed = True
-            elif event.key == pygame.K_UP or event.key == pygame.K_w:
-                self.updateSpeedUp()
-                self.upPressed = True
-            elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
-                self.updateSpeedDown()
-                self.downPressed = True
-            elif event.key == pygame.K_SPACE:
-                #self.nextItem()
-                self.spacePressed = True
-            elif event.key == pygame.K_LSHIFT:
-                self.leftShiftPressed = True
-            elif event.key == pygame.K_ESCAPE:
-                pass
+        self.nextState = self.state.handleInput(self, event)
 
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
-                self.rightPressed = False
-            elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
-                self.leftPressed = False
-            elif event.key == pygame.K_UP or event.key == pygame.K_w:
-                self.upPressed = False
-            elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
-                self.downPressed = False
-            elif event.key == pygame.K_LSHIFT:
-                self.leftShiftPressed = False
-            elif event.key == pygame.K_SPACE:
-                self.spacePressed = False
+        # if self.nextState != None:
+        #     self.state.exit(self)
+        #     self.state = self.nextState
+        #     self.state.enter(self)
+        #     self.nextState = None
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == MOUSE_LEFT:
-                self.leftMousePressed = True
-            elif event.button == MOUSE_RIGHT:
-                self.rightMousePressed = True
+    @property
+    def state(self):
+        return self._state
 
-        elif event.type == pygame.MOUSEBUTTONUP:
-            if event.button == MOUSE_LEFT:
-                self.leftMousePressed = False
-            elif event.button == MOUSE_RIGHT:
-                self.rightMousePressed = False
+    @state.setter
+    def state(self, value):
+        self._state.exit(self)
+        self._state = value
+        self._state.enter(self)
+
 
     def updatePressedKeys(self):
         if self.rightPressed:
@@ -235,3 +217,6 @@ class PlayerTest(pygame.sprite.Sprite):
             pass
         if self.spacePressed:
             pass
+
+    def jump(self):
+        self.speedy = -self.jumpSpeed

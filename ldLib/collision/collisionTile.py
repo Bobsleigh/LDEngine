@@ -91,3 +91,17 @@ def collisionWithTile(sprite, tileType, map):
         return True
     else:
         return False
+
+def collisionExclusivelyWithTile(sprite, tileType, map):
+    tileWidth = map.tmxData.tilewidth
+    tileHeight = map.tmxData.tileheight
+
+    upLeftTileGid = map.tmxData.get_tile_gid((sprite.collisionMask.rect.left)/tileWidth, (sprite.collisionMask.rect.top)/tileHeight, COLLISION_LAYER)
+    upRightTileGid = map.tmxData.get_tile_gid((sprite.collisionMask.rect.right - 1)/tileWidth, (sprite.collisionMask.rect.top)/tileHeight, COLLISION_LAYER)
+    downLeftTileGid = map.tmxData.get_tile_gid((sprite.collisionMask.rect.left)/tileWidth, (sprite.collisionMask.rect.bottom - 1)/tileHeight, COLLISION_LAYER)
+    downRightTileGid = map.tmxData.get_tile_gid((sprite.collisionMask.rect.right - 1)/tileWidth, (sprite.collisionMask.rect.bottom - 1)/tileHeight, COLLISION_LAYER)
+
+    if upLeftTileGid == tileType and upRightTileGid == tileType and downLeftTileGid == tileType and downRightTileGid == tileType:
+        return True
+    else:
+        return False
