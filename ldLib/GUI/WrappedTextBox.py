@@ -1,15 +1,15 @@
 import pygame
 
 from app.settings import *
-from ldLib.GUI import Box
+from ldLib.GUI.Box import Box
 
 
-class DialogBox(pygame.sprite.Sprite):
-    def __init__(self,pos, size, text):
+class WrappedTextBox(pygame.sprite.Sprite):
+    def __init__(self,pos, size, text, margin=(10,10)):
         super().__init__()
 
-        self.marginX = 10
-        self.marginY = 10
+        self.marginX = margin[0]
+        self.marginY = margin[1]
         self.spaceBetweenLines = 20
 
         self.box = Box(pos,size)
@@ -25,6 +25,13 @@ class DialogBox(pygame.sprite.Sprite):
     def isTextLongerThanBox(self, renderedTxt):
         txtRect = renderedTxt.get_rect()
         if txtRect.width + self.marginX * 2 > self.rect.width:
+            return True
+        else:
+            return False
+
+    def isTextLongerThanBoxNEW(self, text):
+        textSize = self.arial.size(text)
+        if textSize[0] + self.marginX * 2 > self.rect.width:
             return True
         else:
             return False
@@ -52,7 +59,8 @@ class DialogBox(pygame.sprite.Sprite):
             return lineList
 
         else:
-            return text
+            lineList.append(text)
+            return lineList
 
     def renderWrappedText(self, text):
         lineList = self.getWrappedLineList(text)
@@ -62,9 +70,9 @@ class DialogBox(pygame.sprite.Sprite):
             renderSize = self.arial.size(lineList[i])
             render = self.arial.render(lineList[i], False, BLACK)
             if i == 0:
-                self.box.box.blit(render, (self.rect.x + self.marginX, self.rect.y + self.marginY))
+                self.box.box.blit(render, (self.marginX,self.marginY))
             else:
-                self.box.box.blit(render, (self.rect.x + self.marginX, self.rect.y + self.marginY + (self.spaceBetweenLines + renderSize[1]) * (i)))
+                self.box.box.blit(render, (self.marginX,self.marginY + (self.spaceBetweenLines + renderSize[1]) * (i)))
             i += 1
 
 
