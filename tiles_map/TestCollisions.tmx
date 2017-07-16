@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="18" tilewidth="32" tileheight="32" nextobjectid="8">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="18" tilewidth="32" tileheight="32" nextobjectid="9">
  <tileset firstgid="1" name="Set_01" tilewidth="32" tileheight="32" tilecount="25">
   <image source="../../LD35/tiles_map/img/Set_01.png" width="160" height="160"/>
  </tileset>
@@ -29,6 +29,11 @@
  <objectgroup name="outZoneLayer"/>
  <objectgroup name="inZoneLayer">
   <object id="4" name="InZone" x="1008.5" y="398" width="33" height="30">
+   <properties>
+    <property name="StartPoint" value="StartPointWorld"/>
+   </properties>
+  </object>
+  <object id="8" name="InZone" type="InZone" x="372" y="110" width="75" height="88">
    <properties>
     <property name="StartPoint" value="StartPointWorld"/>
    </properties>

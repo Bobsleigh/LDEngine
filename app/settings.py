@@ -115,6 +115,7 @@ MOUSE_RIGHT = 3
 TAG_BP = 0
 TAG_MARIE = 0
 TAG_PHIL = 0
+TAP_DIAGNOSE_MAP_TMX = 0
 
 # Load settings_local.py if exist
 try:

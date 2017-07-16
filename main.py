@@ -14,6 +14,10 @@ if __name__ == '__main__':
     if (TAG_MARIE==1):
         exec(open('FeatureTests\AnimationDemo\Test.py').read())
 
-exec(open('FeatureTests\TileCollisions\Test.py').read())
+    if TAG_BP:
+        exec(open('FeatureTests\TileCollisions\Test.py').read())
+        #exec(open('FeatureTests\DialogBox\Test.py').read())
 
-#exec(open('FeatureTests\DialogBox\Test.py').read())
+# exec(open('FeatureTests\DialogBox\Test.py').read())
+# exec(open('FeatureTests\TileCollisions\Test.py').read())
+# exec(open('FeatureTests\DialogBox\Test.py').read())
