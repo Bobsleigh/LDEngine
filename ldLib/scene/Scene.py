@@ -16,7 +16,7 @@ class Scene:
 
         if self.player != None:
             self.sceneData.allSprites.add(self.player)
-            self.sceneData.notifySet.add(self.player)
+            self.sceneData.notifyGroup.add(self.player)
 
         if self.sceneData.camera != None:
             self.camera = self.sceneData.camera

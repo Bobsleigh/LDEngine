@@ -11,5 +11,5 @@ if __name__ == '__main__':
 
     # Uncomment the test you want to run. This main file is needed to keep the relative path intact.
 
-    #exec(open('FeatureTests\TileCollisions\Test.py').read())
-    exec(open('FeatureTests\DialogBox\Test.py').read())
+    exec(open('FeatureTests\TileCollisions\Test.py').read())
+    #exec(open('FeatureTests\DialogBox\Test.py').read())
