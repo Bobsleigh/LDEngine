@@ -7,13 +7,15 @@
 #
 # Check pyinstaller for full documentation
 #
+# https://stackoverflow.com/questions/28033003/pyinstaller-with-pygame/36456473#36456473
+#
 
 block_cipher = None
 
 addedFiles = [ ('tiles_map', 'tiles_map'), ('music_pcm','music_pcm'), ('img', 'img'), ('fonts', 'fonts') ]
 
 a = Analysis(['main.py'],
-             pathex=['LD35'],
+             pathex=['LDEngine'],
              binaries=None,
              datas=addedFiles,
              hiddenimports=[],
