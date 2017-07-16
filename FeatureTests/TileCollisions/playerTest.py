@@ -77,7 +77,6 @@ class PlayerTest(pygame.sprite.Sprite):
         self.collisionRules.append(CollisionWithSpike())
         self.collisionRules.append(CollisionWithLadder())
 
-
         self._state = IdleState()
         # self.nextState = None
 

@@ -32,7 +32,7 @@ class Scene:
     def mainLoop(self):
         self.sceneRunning = True
         while self.sceneRunning:
-            self.eventHandler.eventHandle(self.sceneData.notifySet)
+            self.eventHandler.eventHandle(self.sceneData.notifyGroup)
             self.logicHandler.handle()
             if self.sceneData.camera == None:
                 self.drawer.draw(self.screen, self.sceneData.allSprites, self.sceneData.spritesHUD, self.sceneData.spritesBackGround, self.player)

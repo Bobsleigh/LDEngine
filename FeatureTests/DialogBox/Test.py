@@ -11,6 +11,7 @@ import pygame
 from ldLib.scene.Scene import Scene
 from ldLib.scene.GameData import GameData
 from app.settings import *
+from FeatureTests.DialogBox.DialogSceneDrawer import DialogSceneDrawer
 
 
 
@@ -40,4 +41,5 @@ if __name__ == '__main__':
     gameData.sceneData = DialogSceneData()
     logicHandler = DialogSceneLogicHandler(gameData)
     testScene = Scene(screen, gameData, logicHandler)
+    testScene.drawer = DialogSceneDrawer()
     testScene.run()

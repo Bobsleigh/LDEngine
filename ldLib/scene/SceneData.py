@@ -1,13 +1,13 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-import weakref
+from ldLib.tools.NotifyGroup import NotifyGroup
 
 class SceneData:
     def __init__(self):
         self.nextScene = None
 
-        self.notifySet = weakref.WeakSet()
+        self.notifyGroup = NotifyGroup()
         self.allSprites = pygame.sprite.Group()
         self.spritesHUD = pygame.sprite.Group()
         self.spritesBackGround = pygame.sprite.Group()

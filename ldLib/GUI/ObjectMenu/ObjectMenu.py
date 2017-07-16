@@ -92,7 +92,7 @@ class ObjectMenu(pygame.sprite.Sprite):
             self.chosenOptionIndex = None
 
     def notify(self, event):
-        if self.activated:
+        if self.isActivated:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     self.optionList[self.selector.selectedIndex].deselect()
@@ -116,7 +116,6 @@ class ObjectMenu(pygame.sprite.Sprite):
             self.scrolledPosition += 1
             for option in self.optionList:
                 count = self.optionList.index(option)
-
 
     def scrollUp(self):
         if self.selectedIndex() < self.scrolledPosition and self.scrolledPosition != 0:

@@ -2,6 +2,7 @@ __author__ = 'Bobsleigh'
 from ldLib.scene.SceneData import SceneData
 from FeatureTests.TileCollisions.playerTest import PlayerTest
 from ldLib.GUI.WrappedTextBox import WrappedTextBox
+from ldLib.GUI.DialogBox import DialogBox
 
 
 class DialogSceneData(SceneData):
@@ -13,3 +14,7 @@ class DialogSceneData(SceneData):
 
         self.wrappedTextBox2 = WrappedTextBox((50,400), (100,100), "Bonjour", (10,10))
         self.spritesHUD.add(self.wrappedTextBox2)
+
+        self.dialogBox = DialogBox((200,400), (100,100), "DialogBox", (10,10))
+        self.spritesHUD.add(self.dialogBox)
+        self.notifyGroup.add(self.dialogBox)
