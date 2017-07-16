@@ -1,11 +1,12 @@
+from FeatureTests.AnimationDemo.AnimatedPlayer import AnimatedPlayer
+
 __author__ = 'Bobsleigh'
 from ldLib.scene.SceneDataTMX import SceneDataTMX
-from FeatureTests.TileCollisions.playerTest import PlayerTest
 
 
 class AnimationDemoSceneData(SceneDataTMX):
     def __init__(self):
-        super().__init__("Template")
+        super().__init__("AnimateMap")
 
-        self.player = PlayerTest(50, 50, self)
+        self.player = AnimatedPlayer(50, 50, self)
         self.camera.add(self.player)

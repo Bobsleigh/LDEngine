@@ -11,13 +11,13 @@ if __name__ == '__main__':
 
     # Uncomment the test you want to run. This main file is needed to keep the relative path intact.
 
-    if (TAG_MARIE==1):
+    if (TAG_MARIE):
         exec(open('FeatureTests\AnimationDemo\Test.py').read())
 
     if TAG_BP:
         exec(open('FeatureTests\TileCollisions\Test.py').read())
         #exec(open('FeatureTests\DialogBox\Test.py').read())
 
-# exec(open('FeatureTests\DialogBox\Test.py').read())
-# exec(open('FeatureTests\TileCollisions\Test.py').read())
-# exec(open('FeatureTests\DialogBox\Test.py').read())
+    # exec(open('FeatureTests\DialogBox\Test.py').read())
+    # exec(open('FeatureTests\TileCollisions\Test.py').read())
+    # exec(open('FeatureTests\DialogBox\Test.py').read())
