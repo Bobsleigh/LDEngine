@@ -2,7 +2,7 @@ __author__ = 'Bobsleigh'
 import pygame
 from app.settings import *
 
-class PlayerLifeBar(pygame.sprite.Sprite):
+class LifeBar(pygame.sprite.Sprite):
     def __init__(self, healthMax):
         super().__init__()
         self.image = pygame.Surface([16, 150])
