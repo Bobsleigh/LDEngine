@@ -65,6 +65,8 @@ class TmxData:
         self.mapName = ntpath.basename(self.rawTmxData.filename)
 
         self.layers = self.extractLayerName()
+
+        # gidMap : gid -> tileType
         self.gidMap = self.rawTmxData.tiledgidmap
         # Add the number 0 in the gid
         self.gidMap[0] = 0
@@ -96,7 +98,7 @@ class TmxData:
 
     # Give the real type of tile at the sprite collisionMask position
     # May add an shift (i,j) if needed
-    def get_tileInSprite(self, sprite, layer, position='C', i=0, j=0):
+    def get_tileTypeInSprite(self, sprite, layer, position='C', i=0, j=0):
         layerNumber = self.get_layerNumber(layer)
 
         pos = self.get_spritePosition(self, sprite.collisionMask, position)
@@ -104,7 +106,7 @@ class TmxData:
         return self.gidMap[gid]
 
     # Give the real type of tile at the sprite collisionMask position (We add the movement speed)
-    def get_nextTileInMovingSprite(self, sprite, layer, position='C'):
+    def get_nextTileTypeInMovingSprite(self, sprite, layer, position='C'):
         layerNumber = self.get_layerNumber(layer)
 
         pos = self.get_spritePosition(self, sprite.collisionMask, position)
@@ -112,15 +114,15 @@ class TmxData:
         return self.gidMap[gid]
 
     # Add a tile at position (x,y) to the list to change it
-    def addTileXYToListToChange(self, coupleXY, newNumber, layer=None):
+    def addTileTypeXYToListToChange(self, coupleXY, newNumber, layer=None):
         if layer is None:
             layer = self.layerTerrainName
         else:
             layer = self.get_layerName(layer)
-        self.addTileIJToListToChange((int(coupleXY[1]/self.tileHeight), int(coupleXY[0]/self.tileWidth)), newNumber, layer)
+        self.addTileTypeIJToListToChange((int(coupleXY[1]/self.tileHeight), int(coupleXY[0]/self.tileWidth)), newNumber, layer)
 
     # Add a tile at position (i,j) to the list to change it
-    def addTileIJToListToChange(self, coupleIJ, newNumber, layer=None):
+    def addTileTypeIJToListToChange(self, coupleIJ, newNumber, layer=None):
         if layer is None:
             layer = self.layerTerrainName
         else:
@@ -128,7 +130,9 @@ class TmxData:
         self.listTileToChange.append((coupleIJ[0], coupleIJ[1], layer, newNumber))
 
     # Change all the time at once and update : CARE, we use "redraw_tiles" of pyscroll.BufferedRenderer
-    def changeAllTileInList(self, bufferedRenderer):
+    # We change all, because it is more fast this way.
+    # (One by one is too slow)
+    def changeAllTileTypeInList(self, bufferedRenderer):
         # If the list is empty, we do nothing
         if self.listTileToChange:
             # Loop on self.listTileToChange

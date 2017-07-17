@@ -3,9 +3,21 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
+ORANGE = (255, 128, 0)
 BLUE = (0, 0, 255)
-YELLOW = (160, 0, 160)
+YELLOW = (160, 160, 0)
 GREY = (100, 100, 100)
+PURPLE = (128, 0, 128)
+
+MAPCOLOR = {"BLACK": BLACK,
+            "WHITE": WHITE,
+            "GREEN": GREEN,
+            "RED": RED,
+            "ORANGE": ORANGE,
+            "BLUE": BLUE,
+            "YELLOW": YELLOW,
+            "GREY": GREY,
+            "PURPLE": PURPLE}
 
 COLOR_POWER_BAR = (100,50,138)
 COLOR_POWER_BAR_EMPTY = (0,0,0,1)
