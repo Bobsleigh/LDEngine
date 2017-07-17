@@ -15,12 +15,9 @@ class GenericSprite(pygame.sprite.Sprite):
         self.name = "GenericSprite"
         self.type = "Sprite"
 
-        self.imageEnemy = pygame.Surface((1, 1))
-        self.imageEnemy.set_alpha(0)
-        self.image = self.imageEnemy
-
-        self.frames = [self.imageEnemy]
-        self.animation = Animation(self, self.frames, 100)
+        self.imageSprite = pygame.Surface((1, 1))
+        self.imageSprite.set_alpha(0)
+        self.image = self.imageSprite
 
         self.rect = self.image.get_rect()
         self.x = x
@@ -44,7 +41,7 @@ class GenericSprite(pygame.sprite.Sprite):
         self.mapData = mapData
 
     def update(self):
-        self.animation.update()
+        #self.animation.update()
         self.updateCollisionMask()
 
     def updateCollisionMask(self):

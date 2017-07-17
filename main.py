@@ -18,6 +18,7 @@ if __name__ == '__main__':
         #exec(open('FeatureTests\TileCollisions\Test.py').read())
         #exec(open('FeatureTests\TmxDataDemo\Test.py').read())
         #exec(open('FeatureTests\DialogBox\Test.py').read())
+        #exec(open('FeatureTests\AnimationDemo\Test.py').read())
         exec(open('FeatureTests\EnemyFactoryDemo\Test.py').read())
 
     # exec(open('FeatureTests\DialogBox\Test.py').read())
