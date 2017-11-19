@@ -11,7 +11,8 @@ from ldLib.scene.GameData import GameData
 from app.settings import *
 
 #
-# This test does not work well.
+# This test does not work for now.
+# See issue : #7
 #
 # To use the tileType (not the gid) properly, we need to change all the "map.tmxData.get_tile_gid"
 # in collision code.
