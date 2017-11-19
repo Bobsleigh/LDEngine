@@ -25,6 +25,8 @@ pip-log.txt
 # Directory-based project format:
 .idea/
 
+# Thumbs.db are Windows special file when thumbnail view is used
+Thumbs.db
 
 # local code
 *_local
