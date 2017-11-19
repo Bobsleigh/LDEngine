@@ -1,26 +1,17 @@
-import os
-import sys
-
-import pygame
-
-from app.scene.sceneHandler import SceneHandler
-from app.scene.titleScreen.titleScreen import TitleScreen
-from app.settings import *
+#
+# main.py
+#
+# Generic main who only call the main_local if exist
+#
+# In your main_local, you can run all your tests as you want
+# Example in main_local.py :
+# if __name__ == '__main__':
+#     exec(open('FeatureTests\AnimationDemo\Test.py').read())
+#
 
 if __name__ == '__main__':
 
-    # Uncomment the test you want to run. This main file is needed to keep the relative path intact.
-
-    if (TAG_MARIE):
-        exec(open('FeatureTests\AnimationDemo\Test.py').read())
-
-    if TAG_BP:
-        #exec(open('FeatureTests\AnimationDemo\Test.py').read())
-        exec(open('FeatureTests\DialogBox\Test.py').read())
-        #exec(open('FeatureTests\EnemyFactoryDemo\Test.py').read())
-        #exec(open('FeatureTests\TileCollisions\Test.py').read())
-        #exec(open('FeatureTests\TmxDataDemo\Test.py').read())
-
-    # exec(open('FeatureTests\DialogBox\Test.py').read())
-    # exec(open('FeatureTests\TileCollisions\Test.py').read())
-    # exec(open('FeatureTests\DialogBox\Test.py').read())
+    try:
+        exec(open('main_local.py').read())
+    except FileNotFoundError:
+        pass
