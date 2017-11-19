@@ -17,19 +17,15 @@ class AnimatedPlayer(pygame.sprite.Sprite):
         self.name = "player"
 
         # Code for animation
-        self.imageShapeLeft = [pygame.image.load(os.path.join('img', 'playerLeft.png')),
-                               pygame.image.load(os.path.join('img', 'playerLeft1.png')),
-                               pygame.image.load(os.path.join('img', 'playerLeft2.png'))]
-
         self.imageShapeRight = [pygame.image.load(os.path.join('img', 'playerRight.png')),
                                 pygame.image.load(os.path.join('img', 'playerRight1.png')),
                                 pygame.image.load(os.path.join('img', 'playerRight2.png'))]
-
+        self.imageShapeLeft = [pygame.transform.flip(img, True, False) for img in self.imageShapeRight]
 
         self.image = self.imageShapeRight[0]
 
-        self.animationLeft = Animation(self.imageShapeLeft,60,True)
-        self.animationRight = Animation(self.imageShapeRight, 60)
+        self.animationLeft = Animation(self.imageShapeLeft, 30, True)
+        self.animationRight = Animation(self.imageShapeRight, 30)
         self.animation = self.animationRight
 
         #End of code for animation

@@ -1,18 +1,19 @@
-from FeatureTests.AnimationDemo.AnimationDemoSceneData import AnimationDemoSceneData
-from FeatureTests.AnimationDemo.AnimationDemoLogicHandler import AnimationDemoLogicHandler
-
-__author__ = 'Bobsleigh'
+#
+# AnimationDemo\Test.py
+#
+# Generate an animated player / Test the Animation class
+#
+# The animation play in loop when the player facing left
+#
 
 import os
 import sys
-
 import pygame
-
+from FeatureTests.AnimationDemo.AnimationDemoSceneData import AnimationDemoSceneData
+from FeatureTests.AnimationDemo.AnimationDemoLogicHandler import AnimationDemoLogicHandler
 from ldLib.scene.Scene import Scene
 from ldLib.scene.GameData import GameData
 from app.settings import *
-
-
 
 if __name__ == '__main__':
     #Code to check if the code is running from a PyInstaller --onefile .exe
