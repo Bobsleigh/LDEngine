@@ -3,7 +3,7 @@ from LDEngine.ldLib.scene.SceneData import SceneData
 from LDEngine.FeatureTests.TileCollisions.playerTest import PlayerTest
 from LDEngine.ldLib.GUI.WrappedTextBox import WrappedTextBox
 from LDEngine.ldLib.GUI.DialogBox import DialogBox
-
+from MenuGrid import MenuGrid
 
 class DialogSceneData(SceneData):
     def __init__(self):
@@ -18,3 +18,6 @@ class DialogSceneData(SceneData):
         self.dialogBox = DialogBox((200,400), (100,100), "DialogBox", (10,10))
         self.spritesHUD.add(self.dialogBox)
         self.notifyGroup.add(self.dialogBox)
+
+        self.itemMenu = MenuGrid(30, 30, 4, 4, 20, 20, 1)
+        self.spritesHUD.add(self.itemMenu)
