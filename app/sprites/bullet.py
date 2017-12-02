@@ -8,15 +8,15 @@ from LDEngine.app.scene.platformScreen.collisionPlayerPlatform import *
 
 class Bullet(Enemy):
     def __init__(self, x, y, direction=RIGHT, friendly=True):
-        super().__init__(x, y, os.path.join('img', 'Bullet.png'))
+        super().__init__(x, y, os.path.join('LDEngine\img', 'Bullet.png'))
 
         self.name = "bullet"
 
         self.imageBulletRight = list()
-        self.imageBulletRight.append(pygame.image.load(os.path.join('img', 'Bullet.png')))
+        self.imageBulletRight.append(pygame.image.load(os.path.join('LDEngine\img', 'Bullet.png')))
 
         self.imageBulletLeft = list()
-        self.imageBulletLeft.append(pygame.image.load(os.path.join('img', 'Bullet.png')))
+        self.imageBulletLeft.append(pygame.image.load(os.path.join('LDEngine\img', 'Bullet.png')))
 
         self.image = self.imageBulletRight[0]
 

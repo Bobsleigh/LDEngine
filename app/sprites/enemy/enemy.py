@@ -29,7 +29,7 @@ class Enemy(pygame.sprite.Sprite):
         self.isCollisionApplied = False
         self.collisionMask = CollisionMask(self.rect.x + 3, self.rect.y, self.rect.width-6, self.rect.height)
 
-        self.soundDead = pygame.mixer.Sound(os.path.join('music_pcm', 'Punch2.wav'))
+        self.soundDead = pygame.mixer.Sound(os.path.join('LDEngine\music_pcm', 'Punch2.wav'))
         self.soundDead.set_volume(1)
 
         self.dictProperties = {}
