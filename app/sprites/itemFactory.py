@@ -1,5 +1,5 @@
-from LDEngine.app.tools.functionTools import *
-#from LDEngine.app.sprites.item.item import Item #TODO Créer un item générique et arranger le code du create ci bas
+from app.tools.functionTools import *
+#from app.sprites.item.item import Item #TODO Créer un item générique et arranger le code du create ci bas
 
 
 class ItemFactory:

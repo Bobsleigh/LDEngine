@@ -1,8 +1,8 @@
 __author__ = 'Bobsleigh'
 import pygame
 
-from LDEngine.app.settings import *
-from LDEngine.ldLib.GUI.WrLDEngine.appedTextBox import WrappedTextBox
+from app.settings import *
+from ldLib.GUI.WrappedTextBox import WrappedTextBox
 
 
 class DialogBox(pygame.sprite.Sprite):

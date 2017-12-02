@@ -5,8 +5,8 @@ import pygame
 import pyscroll
 import pytmx
 
-from LDEngine.ldLib.scene.SceneData import SceneData
-from LDEngine.app.settings import *
+from ldLib.scene.SceneData import SceneData
+from app.settings import *
 
 class SceneDataTMX(SceneData):
     def __init__(self, mapName="WorldMap", nameInZone="StartPointWorld", screenSize=(SCREEN_WIDTH,SCREEN_HEIGHT)):

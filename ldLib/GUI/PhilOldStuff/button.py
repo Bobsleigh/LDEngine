@@ -1,6 +1,6 @@
 import pygame
 
-from LDEngine.ldLib.GUI.PhilOldStuff import MessageBox
+from ldLib.GUI.PhilOldStuff import MessageBox
 
 
 class Button(pygame.sprite.Sprite):

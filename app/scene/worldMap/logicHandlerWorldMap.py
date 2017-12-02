@@ -1,5 +1,5 @@
-from LDEngine.app.mapData import MapData
-from LDEngine.app.scene.worldMap.collisionPlayerWorldMap import CollisionPlayerWorldMap
+from app.mapData import MapData
+from app.scene.worldMap.collisionPlayerWorldMap import CollisionPlayerWorldMap
 
 class LogicHandlerWorldMap:
     def __init__(self, player, gameData):

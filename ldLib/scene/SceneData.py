@@ -1,7 +1,7 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-from LDEngine.ldLib.tools.NotifyGroup import NotifyGroup
+from ldLib.tools.NotifyGroup import NotifyGroup
 
 class SceneData:
     def __init__(self):

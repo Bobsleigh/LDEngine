@@ -1,8 +1,8 @@
-from LDEngine.app.mapData import MapData
-from LDEngine.app.sprites.bullet import *
-from LDEngine.app.settings import *
-from LDEngine.ldLib.collision.collisionNotifySprite import *
-from LDEngine.app.tools.functionTools import *
+from app.mapData import MapData
+from app.sprites.bullet import *
+from app.settings import *
+from ldLib.collision.collisionNotifySprite import *
+from app.tools.functionTools import *
 import pygame
 
 class LogicHandlerPlatformScreen:
@@ -17,8 +17,8 @@ class LogicHandlerPlatformScreen:
         self.screen = screen
 
     def handle(self, player, gameData):
-        self.LDEngine.applyGravity(self.mapData.allSprites)
-        self.LDEngine.applyFriction(self.mapData.allSprites)
+        self.applyGravity(self.mapData.allSprites)
+        self.applyFriction(self.mapData.allSprites)
         self.collisionChecker.collisionAllSprites(player, self.mapData, gameData)
         self.handleZoneCollision(player)
         self.mapData.allSprites.update()
@@ -45,12 +45,12 @@ class LogicHandlerPlatformScreen:
         else:
            return False
 
-    def LDEngine.applyGravity(self, allSprites):
+    def applyGravity(self, allSprites):
         for sprite in allSprites:
             if sprite.isPhysicsApplied == True or sprite.isGravityApplied == True:
                 sprite.speedy += GRAVITY
 
-    def LDEngine.applyFriction(self, allSprites):
+    def applyFriction(self, allSprites):
         for sprite in allSprites:
             if sprite.isPhysicsApplied == True or sprite.isFrictionApplied == True:
                 pass

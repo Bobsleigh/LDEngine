@@ -8,9 +8,9 @@ import sys
 
 import pygame
 
-from LDEngine.ldLib.scene.Scene import Scene
-from LDEngine.ldLib.scene.GameData import GameData
-from LDEngine.app.settings import *
+from ldLib.scene.Scene import Scene
+from ldLib.scene.GameData import GameData
+from app.settings import *
 
 
 

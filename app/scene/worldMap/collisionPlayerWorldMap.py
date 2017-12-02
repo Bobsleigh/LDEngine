@@ -1,6 +1,6 @@
 __author__ = 'Bobsleigh'
 
-from LDEngine.app.settings import *
+from app.settings import *
 import pygame
 
 class CollisionPlayerWorldMap:

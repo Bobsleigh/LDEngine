@@ -3,15 +3,15 @@ import pyscroll
 import pytmx
 import re
 import pygame
-from LDEngine.app.settings import *
-from LDEngine.app.tools.functionTools import *
+from app.settings import *
+from app.tools.functionTools import *
 import os
 
-from LDEngine.app.sprites.enemyFactory import EnemyFactory
-from LDEngine.app.sprites.itemFactory import ItemFactory
+from app.sprites.enemyFactory import EnemyFactory
+from app.sprites.itemFactory import ItemFactory
 import weakref
-# from LDEngine.app.sound.soundPlayerController import *
-# from LDEngine.app.sprites.player import *
+# from app.sound.soundPlayerController import *
+# from app.sprites.player import *
 
 class MapData:
     def __init__(self, mapName="WorldMap", nameInZone="StartPointWorld", screenSize=(SCREEN_WIDTH, SCREEN_HEIGHT)):

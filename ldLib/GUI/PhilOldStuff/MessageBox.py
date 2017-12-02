@@ -1,7 +1,7 @@
 import pygame
 
-from LDEngine.app.settings import *
-from LDEngine.ldLib.GUI import Box
+from app.settings import *
+from ldLib.GUI import Box
 
 
 class MessageBox(pygame.sprite.Sprite):

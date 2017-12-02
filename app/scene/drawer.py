@@ -1,5 +1,5 @@
 import pygame
-from LDEngine.app.settings import *
+from app.settings import *
 
 class Drawer:
     def __init__(self):

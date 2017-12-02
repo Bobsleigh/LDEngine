@@ -1,7 +1,7 @@
 __author__ = 'Bobsleigh'
 
-from LDEngine.ldLib.scene.Drawer import Drawer
-from LDEngine.app.settings import *
+from ldLib.scene.Drawer import Drawer
+from app.settings import *
 
 class DialogSceneDrawer(Drawer):
     def __init__(self):

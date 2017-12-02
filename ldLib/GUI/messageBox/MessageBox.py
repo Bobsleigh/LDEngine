@@ -1,7 +1,7 @@
 import pygame
-from LDEngine.app.settings import *
+from app.settings import *
 
-from LDEngine.ldLib.GUI.messageBox.TextLine import TextLine
+from ldLib.GUI.messageBox.TextLine import TextLine
 
 
 #For a very short message only
@@ -60,7 +60,7 @@ class MessageBox(pygame.sprite.Sprite):
     def updateText(self):
         self.lines = []
         for text in self.textList:
-            self.lines.LDEngine.append(TextLine(text))
+            self.lines.append(TextLine(text))
 
     def newText(self):
         self.textList = []

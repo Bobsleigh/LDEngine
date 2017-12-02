@@ -1,6 +1,6 @@
 import pygame
-from LDEngine.ldLib.collision.collisionMask import CollisionMask
-from LDEngine.ldLib.animation.Animation import Animation
+from ldLib.collision.collisionMask import CollisionMask
+from ldLib.animation.Animation import Animation
 
 #
 # Generic sprite to create

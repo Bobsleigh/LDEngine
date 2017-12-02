@@ -1,9 +1,9 @@
-from LDEngine.app.settings import *
-from LDEngine.app.scene.worldMap.worldMap import WorldMap
-from LDEngine.app.scene.titleScreen.titleScreen import TitleScreen
+from app.settings import *
+from app.scene.worldMap.worldMap import WorldMap
+from app.scene.titleScreen.titleScreen import TitleScreen
 
-from LDEngine.app.scene.platformScreen.platformScreen import PlatformScreen
-from LDEngine.app.gameData import GameData
+from app.scene.platformScreen.platformScreen import PlatformScreen
+from app.gameData import GameData
 
 
 class SceneHandler:

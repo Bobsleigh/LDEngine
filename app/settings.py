@@ -131,6 +131,6 @@ TAP_DIAGNOSE_MAP_TMX = 0
 
 # Load settings_local.py if exist
 try:
-    from LDEngine.app.settings_local import *
+    from app.settings_local import *
 except ImportError:
     pass

@@ -1,7 +1,7 @@
 from FeatureTests.AnimationDemo.AnimatedPlayer import AnimatedPlayer
 
 __author__ = 'Bobsleigh'
-from LDEngine.ldLib.scene.SceneDataTMX import SceneDataTMX
+from ldLib.scene.SceneDataTMX import SceneDataTMX
 
 
 class AnimationDemoSceneData(SceneDataTMX):

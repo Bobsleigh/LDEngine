@@ -1,9 +1,9 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-from LDEngine.app.settings import *
+from app.settings import *
 
-from LDEngine.app.tools.messageBox.textLine import TextLine
+from app.tools.messageBox.textLine import TextLine
 
 
 #For a very short message only
@@ -15,7 +15,7 @@ class ObjectOption(pygame.sprite.Sprite):
         self.optFont = pygame.font.SysFont(MENU_FONT, fontSize)
         self.name = name
         self.printedName = self.optFont.render(self.name, True, MENU_FONT_COLOR)
-        self.textPos = [0,0] #Par rLDEngine.apport au bouton
+        self.textPos = [0,0] #Par rapport au bouton
 
         self.image = pygame.Surface([1, 1])
         self.rect = self.image.get_rect()

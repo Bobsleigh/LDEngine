@@ -2,9 +2,9 @@ __author__ = 'Bobsleigh'
 
 import pygame
 
-from LDEngine.app.settings import *
-from LDEngine.ldLib.GUI.ObjectMenu.ObjectOption import ObjectOption
-from LDEngine.ldLib.GUI.ObjectMenu.ObjectSelector import ObjectSelector
+from app.settings import *
+from ldLib.GUI.ObjectMenu.ObjectOption import ObjectOption
+from ldLib.GUI.ObjectMenu.ObjectSelector import ObjectSelector
 
 
 #For a very short message only
@@ -28,7 +28,7 @@ class ObjectMenu(pygame.sprite.Sprite):
         self.optionList = []
 
         for string in objectList:
-            self.optionList.LDEngine.append(ObjectOption(string, self.menuFontSize))
+            self.optionList.append(ObjectOption(string, self.menuFontSize))
 
         #All sprite
         self.spritesOptions = pygame.sprite.Group()

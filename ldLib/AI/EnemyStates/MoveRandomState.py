@@ -1,9 +1,9 @@
 __author__ = 'Bobsleigh'
 
 import pygame, random
-from LDEngine.ldLib.Sprites.SecondBoss.EnemyState import EnemyState
-from LDEngine.ldLib.tools.Counter import Counter
-from LDEngine.app.settings import *
+from ldLib.Sprites.SecondBoss.EnemyState import EnemyState
+from ldLib.tools.Counter import Counter
+from app.settings import *
 
 class MoveRandomState(EnemyState):
     def __init__(self, framesBeforeChangingDirection, variance=0):

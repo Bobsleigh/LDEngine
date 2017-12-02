@@ -2,8 +2,8 @@ import os
 
 import pygame
 
-from LDEngine.app.settings import *
-from LDEngine.ldLib.collision.collisionMask import CollisionMask
+from app.settings import *
+from ldLib.collision.collisionMask import CollisionMask
 
 
 class Enemy(pygame.sprite.Sprite):

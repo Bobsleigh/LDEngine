@@ -1,6 +1,6 @@
 __author__ = 'Bobsleigh'
 
-from LDEngine.ldLib.scene.LogicHandler import LogicHandler
+from ldLib.scene.LogicHandler import LogicHandler
 
 class DialogSceneLogicHandler(LogicHandler):
     def __init__(self, gameData):

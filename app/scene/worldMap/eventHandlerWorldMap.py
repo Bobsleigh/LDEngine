@@ -1,5 +1,5 @@
 import pygame
-from LDEngine.app.tools.functionTools import *
+from app.tools.functionTools import *
 
 class EventHandlerWorldMap():
     def __init__(self):

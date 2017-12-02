@@ -1,4 +1,4 @@
-from LDEngine.ldLib.scene.SceneDataTMX import SceneDataTMX
+from ldLib.scene.SceneDataTMX import SceneDataTMX
 from FeatureTests.TmxDataDemo.PlayerTest import PlayerTest
 
 class TestSceneData(SceneDataTMX):

@@ -1,13 +1,13 @@
 import pygame
-from LDEngine.ldLib.Sprites.GenericEnemy import GenericEnemy
-from LDEngine.app.tools.imageBox import *
-from LDEngine.ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
-from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
-from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
-from LDEngine.ldLib.collision.CollisionRules.CollisionWithNothing import CollisionWithNothing
-from LDEngine.ldLib.Sprites.Player.IdleState import IdleState
+from ldLib.Sprites.GenericEnemy import GenericEnemy
+from app.tools.imageBox import *
+from ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
+from ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
+from ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
+from ldLib.collision.CollisionRules.CollisionWithNothing import CollisionWithNothing
+from ldLib.Sprites.Player.IdleState import IdleState
 
-from LDEngine.app.settings import *
+from app.settings import *
 
 #
 # enemy who do "nothing"
@@ -36,10 +36,10 @@ class EnemyNoob(GenericEnemy):
         self.isGravityApplied = True
         self.isCollisionApplied = True
 
-        self.collisionRules.LDEngine.append(CollisionWithNothing())  # Gotta be first in the list to work properly
-        self.collisionRules.LDEngine.append(CollisionWithSolid())
-        self.collisionRules.LDEngine.append(CollisionWithSpring())
-        self.collisionRules.LDEngine.append(CollisionWithSpike())
+        self.collisionRules.append(CollisionWithNothing())  # Gotta be first in the list to work properly
+        self.collisionRules.append(CollisionWithSolid())
+        self.collisionRules.append(CollisionWithSpring())
+        self.collisionRules.append(CollisionWithSpike())
 
         self._state = IdleState()
 

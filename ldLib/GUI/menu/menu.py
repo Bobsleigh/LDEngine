@@ -1,8 +1,8 @@
 import pygame
 
-from LDEngine.ldLib.GUI.menu.option import Option
-from LDEngine.ldLib.GUI.menu.selector import Selector
-from LDEngine.app.settings import *
+from ldLib.GUI.menu.option import Option
+from ldLib.GUI.menu.selector import Selector
+from app.settings import *
 
 
 class Menu(pygame.sprite.Sprite):
@@ -30,7 +30,7 @@ class Menu(pygame.sprite.Sprite):
         self.selected = True
 
     def addOption(self,name,method):
-        self.optionList.LDEngine.append(Option(name,method,self.menuFontSize))
+        self.optionList.append(Option(name,method,self.menuFontSize))
         self.createMenu()
 
     def createMenu(self):

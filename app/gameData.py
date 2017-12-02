@@ -1,4 +1,4 @@
-from LDEngine.app.settings import *
+from app.settings import *
 
 #To initialize my pet
 import os

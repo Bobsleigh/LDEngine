@@ -1,4 +1,4 @@
-from LDEngine.ldLib.Sprites.SpriteFactory import SpriteFactory
+from ldLib.Sprites.SpriteFactory import SpriteFactory
 
 from FeatureTests.EnemyFactoryDemo.TestEnemyNoob import EnemyNoob
 

@@ -1,5 +1,5 @@
-from LDEngine.app.sprites.enemy.enemy import Enemy
-from LDEngine.app.sprites.enemy.enemyShooter import EnemyShooter
+from app.sprites.enemy.enemy import Enemy
+from app.sprites.enemy.enemyShooter import EnemyShooter
 
 class EnemyFactory:
     def __init__(self):
