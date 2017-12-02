@@ -1,5 +1,5 @@
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
 def rectSurface(dimension, color=BLACK, border=0):
     if border >= 1:

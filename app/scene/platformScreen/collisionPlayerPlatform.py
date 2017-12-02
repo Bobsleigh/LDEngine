@@ -1,5 +1,5 @@
-from app.settings import *
-from app.tools.circle import Circle
+from LDEngine.app.settings import *
+from LDEngine.app.tools.circle import Circle
 import pygame
 
 class CollisionPlayerPlatform:

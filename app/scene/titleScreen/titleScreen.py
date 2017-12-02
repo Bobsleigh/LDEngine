@@ -4,12 +4,12 @@ import sys
 
 import pygame
 
-from ldLib.GUI.menu.menu import Menu
-from app.scene.titleScreen.eventHandlerTitleScreen import EventHandlerTitleScreen
-from app.mapData import MapData
-from app.settings import *
-from app.scene.musicFactory import MusicFactory
-from app.scene.drawer import Drawer
+from LDEngine.ldLib.GUI.menu.menu import Menu
+from LDEngine.app.scene.titleScreen.eventHandlerTitleScreen import EventHandlerTitleScreen
+from LDEngine.app.mapData import MapData
+from LDEngine.app.settings import *
+from LDEngine.app.scene.musicFactory import MusicFactory
+from LDEngine.app.scene.drawer import Drawer
 
 
 class TitleScreen:

@@ -1,8 +1,8 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-from ldLib.Sprites.SecondBoss.EnemyState import EnemyState
-from app.settings import *
+from LDEngine.ldLib.Sprites.SecondBoss.EnemyState import EnemyState
+from LDEngine.app.settings import *
 
 class MoveLeftState(EnemyState):
     def __init__(self):

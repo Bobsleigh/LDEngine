@@ -1,7 +1,7 @@
 import pygame
 
-from app.settings import *
-from ldLib.GUI.Box import Box
+from LDEngine.app.settings import *
+from LDEngine.ldLib.GUI.Box import Box
 
 
 class WrappedTextBox(pygame.sprite.Sprite):

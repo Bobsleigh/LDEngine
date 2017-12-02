@@ -3,7 +3,7 @@ __author__ = 'Bobsleigh'
 import pygame
 import os
 
-from app.settings import *
+from LDEngine.app.settings import *
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):

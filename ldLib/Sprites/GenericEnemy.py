@@ -1,5 +1,5 @@
 import pygame
-from ldLib.Sprites.GenericSprite import GenericSprite
+from LDEngine.ldLib.Sprites.GenericSprite import GenericSprite
 
 #
 # Generic enemy to create

@@ -1,9 +1,9 @@
 import os
 import pygame
 
-from app.sprites.enemy.enemy import Enemy
-from app.scene.platformScreen.collisionPlayerPlatform import *
-# from app.tool.animation import Animation
+from LDEngine.app.sprites.enemy.enemy import Enemy
+from LDEngine.app.scene.platformScreen.collisionPlayerPlatform import *
+# from LDEngine.app.tool.animation import Animation
 
 
 class Bullet(Enemy):

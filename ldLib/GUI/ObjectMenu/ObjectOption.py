@@ -1,9 +1,9 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
-from app.tools.messageBox.textLine import TextLine
+from LDEngine.app.tools.messageBox.textLine import TextLine
 
 
 #For a very short message only

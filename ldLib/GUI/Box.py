@@ -1,6 +1,6 @@
 import pygame
 import os
-from app.settings import *
+from LDEngine.app.settings import *
 
 
 class Box(pygame.sprite.Sprite):

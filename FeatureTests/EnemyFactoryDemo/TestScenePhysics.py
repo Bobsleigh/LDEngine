@@ -1,4 +1,4 @@
-from app.settings import *
+from LDEngine.app.settings import *
 
 class TestScenePhysics:
     def __init__(self, sceneData):

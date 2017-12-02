@@ -1,14 +1,14 @@
-from FeatureTests.TmxDataDemo.TestSceneData import TestSceneData
-from FeatureTests.TmxDataDemo.TestSceneLogicHandler import TestSceneLogicHandler
+from LDEngine.FeatureTests.TmxDataDemo.TestSceneData import TestSceneData
+from LDEngine.FeatureTests.TmxDataDemo.TestSceneLogicHandler import TestSceneLogicHandler
 
 import os
 import sys
 
 import pygame
 
-from ldLib.scene.Scene import Scene
-from ldLib.scene.GameData import GameData
-from app.settings import *
+from LDEngine.ldLib.scene.Scene import Scene
+from LDEngine.ldLib.scene.GameData import GameData
+from LDEngine.app.settings import *
 
 #
 # This test does not work for now.

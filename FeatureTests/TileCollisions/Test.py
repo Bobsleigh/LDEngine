@@ -1,5 +1,5 @@
-from FeatureTests.TileCollisions.TestSceneData import TestSceneData
-from FeatureTests.TileCollisions.TestSceneLogicHandler import TestSceneLogicHandler
+from LDEngine.FeatureTests.TileCollisions.TestSceneData import TestSceneData
+from LDEngine.FeatureTests.TileCollisions.TestSceneLogicHandler import TestSceneLogicHandler
 
 __author__ = 'Bobsleigh'
 
@@ -8,9 +8,9 @@ import sys
 
 import pygame
 
-from ldLib.scene.Scene import Scene
-from ldLib.scene.GameData import GameData
-from app.settings import *
+from LDEngine.ldLib.scene.Scene import Scene
+from LDEngine.ldLib.scene.GameData import GameData
+from LDEngine.app.settings import *
 
 
 

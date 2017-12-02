@@ -1,12 +1,12 @@
 
-from app.scene.platformScreen.eventHandlerPlatformScreen import EventHandlerPlatformScreen
-from app.scene.platformScreen.logicHandlerPlatformScreen import LogicHandlerPlatformScreen
-from app.scene.drawer import Drawer
-from app.settings import *
-from app.sprites.playerPlatform import PlayerPlatform
-from app.scene.musicFactory import MusicFactory
+from LDEngine.app.scene.platformScreen.eventHandlerPlatformScreen import EventHandlerPlatformScreen
+from LDEngine.app.scene.platformScreen.logicHandlerPlatformScreen import LogicHandlerPlatformScreen
+from LDEngine.app.scene.drawer import Drawer
+from LDEngine.app.settings import *
+from LDEngine.app.sprites.playerPlatform import PlayerPlatform
+from LDEngine.app.scene.musicFactory import MusicFactory
 
-from app.mapData import MapData
+from LDEngine.app.mapData import MapData
 
 
 

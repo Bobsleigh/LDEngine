@@ -1,8 +1,8 @@
-from app.mapData import MapData
-from app.sprites.bullet import *
-from app.settings import *
-from ldLib.collision.collisionNotifySprite import *
-from app.tools.functionTools import *
+from LDEngine.app.mapData import MapData
+from LDEngine.app.sprites.bullet import *
+from LDEngine.app.settings import *
+from LDEngine.ldLib.collision.collisionNotifySprite import *
+from LDEngine.app.tools.functionTools import *
 import pygame
 
 class LogicHandlerPlatformScreen:

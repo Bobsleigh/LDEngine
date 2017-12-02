@@ -1,7 +1,7 @@
 import pygame
-from ldLib.scene.SceneDataTMX import SceneDataTMX
-from FeatureTests.EnemyFactoryDemo.PlayerTest import PlayerTest
-from FeatureTests.EnemyFactoryDemo.TestEnemyFactory import EnemyFactory
+from LDEngine.ldLib.scene.SceneDataTMX import SceneDataTMX
+from LDEngine.FeatureTests.EnemyFactoryDemo.PlayerTest import PlayerTest
+from LDEngine.FeatureTests.EnemyFactoryDemo.TestEnemyFactory import EnemyFactory
 
 class TestSceneData(SceneDataTMX):
     def __init__(self):

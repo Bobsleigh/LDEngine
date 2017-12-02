@@ -1,8 +1,8 @@
 import pygame
 
-from ldLib.GUI.menu.option import Option
-from ldLib.GUI.menu.selector import Selector
-from app.settings import *
+from LDEngine.ldLib.GUI.menu.option import Option
+from LDEngine.ldLib.GUI.menu.selector import Selector
+from LDEngine.app.settings import *
 
 
 class Menu(pygame.sprite.Sprite):

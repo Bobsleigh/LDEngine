@@ -1,8 +1,8 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-from ldLib.Sprites.Player.PlayerState import PlayerState
-from app.settings import *
+from LDEngine.ldLib.Sprites.Player.PlayerState import PlayerState
+from LDEngine.app.settings import *
 
 class JumpState(PlayerState):
     def __init__(self):

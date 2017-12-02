@@ -1,6 +1,6 @@
-from ldLib.Sprites.SpriteFactory import SpriteFactory
+from LDEngine.ldLib.Sprites.SpriteFactory import SpriteFactory
 
-from FeatureTests.EnemyFactoryDemo.TestEnemyNoob import EnemyNoob
+from LDEngine.FeatureTests.EnemyFactoryDemo.TestEnemyNoob import EnemyNoob
 
 #
 # Need to add all the enemy you gwant to generate.

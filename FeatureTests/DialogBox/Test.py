@@ -1,5 +1,5 @@
-from FeatureTests.DialogBox.DialogSceneData import DialogSceneData
-from FeatureTests.DialogBox.DialogSceneLogicHandler import DialogSceneLogicHandler
+from LDEngine.FeatureTests.DialogBox.DialogSceneData import DialogSceneData
+from LDEngine.FeatureTests.DialogBox.DialogSceneLogicHandler import DialogSceneLogicHandler
 
 __author__ = 'Bobsleigh'
 
@@ -8,10 +8,10 @@ import sys
 
 import pygame
 
-from ldLib.scene.Scene import Scene
-from ldLib.scene.GameData import GameData
-from app.settings import *
-from FeatureTests.DialogBox.DialogSceneDrawer import DialogSceneDrawer
+from LDEngine.ldLib.scene.Scene import Scene
+from LDEngine.ldLib.scene.GameData import GameData
+from LDEngine.app.settings import *
+from LDEngine.FeatureTests.DialogBox.DialogSceneDrawer import DialogSceneDrawer
 
 
 

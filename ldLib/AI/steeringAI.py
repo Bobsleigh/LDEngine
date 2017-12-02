@@ -1,5 +1,5 @@
 import math
-from app.settings import *
+from LDEngine.app.settings import *
 
 class SteeringAI:
     def __init__(self, mapData, userRect, userMaxSpeedx, userMaxSpeedy):

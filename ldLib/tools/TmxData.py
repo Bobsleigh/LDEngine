@@ -48,8 +48,8 @@ import ntpath
 import pprint as pp
 import re
 
-from app.settings import *
-from ldLib.tools.Printer import *
+from LDEngine.app.settings import *
+from LDEngine.ldLib.tools.Printer import *
 
 
 class TmxData:

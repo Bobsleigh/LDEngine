@@ -1,5 +1,5 @@
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
 
 #Objets

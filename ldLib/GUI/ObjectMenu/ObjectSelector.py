@@ -1,7 +1,7 @@
 __author__ = 'Bobsleigh'
 
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
 class ObjectSelector(pygame.sprite.Sprite):
     def __init__(self,num):

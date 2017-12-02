@@ -1,7 +1,7 @@
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
-from ldLib.GUI.messageBox.TextLine import TextLine
+from LDEngine.ldLib.GUI.messageBox.TextLine import TextLine
 
 
 #For a very short message only

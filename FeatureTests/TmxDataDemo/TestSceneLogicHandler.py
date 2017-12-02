@@ -1,7 +1,7 @@
-from ldLib.scene.LogicHandler import LogicHandler
-from FeatureTests.TmxDataDemo.TestScenePhysics import TestScenePhysics
-from ldLib.collision.collisionNotifySprite import collisionNotifySprite
-from app.settings import *
+from LDEngine.ldLib.scene.LogicHandler import LogicHandler
+from LDEngine.FeatureTests.TmxDataDemo.TestScenePhysics import TestScenePhysics
+from LDEngine.ldLib.collision.collisionNotifySprite import collisionNotifySprite
+from LDEngine.app.settings import *
 
 class TestSceneLogicHandler(LogicHandler):
     def __init__(self, gameData):

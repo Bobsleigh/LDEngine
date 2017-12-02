@@ -2,9 +2,9 @@ __author__ = 'Bobsleigh'
 
 import pygame
 
-from app.settings import *
-from ldLib.GUI.ObjectMenu.ObjectOption import ObjectOption
-from ldLib.GUI.ObjectMenu.ObjectSelector import ObjectSelector
+from LDEngine.app.settings import *
+from LDEngine.ldLib.GUI.ObjectMenu.ObjectOption import ObjectOption
+from LDEngine.ldLib.GUI.ObjectMenu.ObjectSelector import ObjectSelector
 
 
 #For a very short message only
