@@ -1,4 +1,3 @@
-__author__ = 'Bobsleigh'
 import logging
 import os
 import pygame
@@ -6,6 +5,7 @@ import pyscroll
 import pytmx
 
 from LDEngine.ldLib.scene.SceneData import SceneData
+
 from LDEngine.app.settings import *
 
 class SceneDataTMX(SceneData):
@@ -18,6 +18,8 @@ class SceneDataTMX(SceneData):
         # A set-up to shut down the logger 'orthographic' in pyscroll
         logger = logging.getLogger('orthographic')
         logger.setLevel(logging.ERROR)
+
+        print(self.reqImageName(self.nameMap))
 
         self.tmxData = pytmx.util_pygame.load_pygame(self.reqImageName(self.nameMap))
         self.tiledMapData = pyscroll.data.TiledMapData(self.tmxData)

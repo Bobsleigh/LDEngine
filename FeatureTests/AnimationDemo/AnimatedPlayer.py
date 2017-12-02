@@ -1,14 +1,17 @@
 import os
+import pygame
 
+from LDEngine.ldLib.tools.ImageBox import rectSurface
 from LDEngine.ldLib.animation.Animation import Animation
 from LDEngine.ldLib.collision.collisionMask import CollisionMask
-from LDEngine.app.tools.imageBox import *
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithLadder import CollisionWithLadder
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithNothing import CollisionWithNothing
 from LDEngine.ldLib.Sprites.Player.IdleState import IdleState
+
+from LDEngine.app.settings import *
 
 class AnimatedPlayer(pygame.sprite.Sprite):
     def __init__(self, x, y, sceneData, max_health=10):

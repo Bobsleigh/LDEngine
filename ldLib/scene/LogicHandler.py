@@ -1,4 +1,3 @@
-import pygame
 
 class LogicHandler:
     def __init__(self,gameData):

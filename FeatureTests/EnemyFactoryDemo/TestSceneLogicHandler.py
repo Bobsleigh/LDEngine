@@ -1,6 +1,7 @@
-from LDEngine.ldLib.scene.LogicHandler import LogicHandler
 from LDEngine.FeatureTests.EnemyFactoryDemo.TestScenePhysics import TestScenePhysics
+from LDEngine.ldLib.scene.LogicHandler import LogicHandler
 from LDEngine.ldLib.collision.collisionNotifySprite import collisionNotifySprite
+
 from LDEngine.app.settings import *
 
 class TestSceneLogicHandler(LogicHandler):

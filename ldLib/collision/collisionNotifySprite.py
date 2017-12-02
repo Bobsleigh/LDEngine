@@ -1,5 +1,3 @@
-__author__ = 'Bobsleigh'
-
 from LDEngine.ldLib.collision.collisionTile import *
 
 def collisionNotifySprite(sprite, tileType, mapData):

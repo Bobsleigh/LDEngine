@@ -1,5 +1,3 @@
-__author__ = 'Bobsleigh'
-
 from LDEngine.app.settings import *
 
 class TestScenePhysics:

@@ -1,8 +1,8 @@
-__author__ = 'Bobsleigh'
 from LDEngine.ldLib.scene.SceneData import SceneData
-from LDEngine.FeatureTests.TileCollisions.playerTest import PlayerTest
+
 from LDEngine.ldLib.GUI.WrappedTextBox import WrappedTextBox
 from LDEngine.ldLib.GUI.DialogBox import DialogBox
+
 from MenuGrid import MenuGrid
 
 class DialogSceneData(SceneData):

@@ -1,6 +1,5 @@
-import pygame
 from LDEngine.ldLib.Sprites.GenericEnemy import GenericEnemy
-from LDEngine.app.tools.imageBox import *
+from LDEngine.ldLib.tools.ImageBox import rectSurface
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
 from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
