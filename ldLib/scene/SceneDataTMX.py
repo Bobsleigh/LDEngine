@@ -19,8 +19,6 @@ class SceneDataTMX(SceneData):
         logger = logging.getLogger('orthographic')
         logger.setLevel(logging.ERROR)
 
-        print(self.reqImageName(self.nameMap))
-
         self.tmxData = pytmx.util_pygame.load_pygame(self.reqImageName(self.nameMap))
         self.tiledMapData = pyscroll.data.TiledMapData(self.tmxData)
         self.cameraPlayer = pyscroll.BufferedRenderer(self.tiledMapData, screenSize, clamp_camera=True)
