@@ -1,4 +1,4 @@
-from app.settings import *
+from LDEngine.app.settings import *
 import pygame
 import os
 

@@ -1,14 +1,14 @@
-from app.settings import *
+from LDEngine.app.settings import *
 
 class TestScenePhysics:
     def __init__(self, sceneData):
         self.sceneData = sceneData
 
     def update(self):
-        self.applyFriction(self.sceneData.allSprites)
-        self.applyGravity(self.sceneData.allSprites)
+        self.LDEngine.applyFriction(self.sceneData.allSprites)
+        self.LDEngine.applyGravity(self.sceneData.allSprites)
 
-    def applyFriction(self, allSprites):
+    def LDEngine.applyFriction(self, allSprites):
         for sprite in allSprites:
             try:
                 if sprite.isFrictionApplied == True:
@@ -35,7 +35,7 @@ class TestScenePhysics:
             except AttributeError:
                 pass
 
-    def applyGravity(self, allSprites):
+    def LDEngine.applyGravity(self, allSprites):
         for sprite in allSprites:
             try:
                 if sprite.isGravityApplied == True:

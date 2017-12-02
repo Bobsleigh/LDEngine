@@ -1,11 +1,11 @@
 import pygame
 import os
 
-from app.sprites.enemy.enemy import Enemy
-from app.sprites.bullet import BeerBullet
-from app.tools.animation import Animation
+from LDEngine.app.sprites.enemy.enemy import Enemy
+from LDEngine.app.sprites.bullet import BeerBullet
+from LDEngine.app.tools.animation import Animation
 
-from app.settings import *
+from LDEngine.app.settings import *
 import random
 
 

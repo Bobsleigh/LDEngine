@@ -1,10 +1,10 @@
-from app.scene.worldMap.eventHandlerWorldMap import EventHandlerWorldMap
-from app.scene.worldMap.logicHandlerWorldMap import LogicHandlerWorldMap
+from LDEngine.app.scene.worldMap.eventHandlerWorldMap import EventHandlerWorldMap
+from LDEngine.app.scene.worldMap.logicHandlerWorldMap import LogicHandlerWorldMap
 
-from app.scene.drawer import Drawer
-from app.settings import *
-from app.sprites.playerWorldMap import Player
-from app.scene.musicFactory import MusicFactory
+from LDEngine.app.scene.drawer import Drawer
+from LDEngine.app.settings import *
+from LDEngine.app.sprites.playerWorldMap import Player
+from LDEngine.app.scene.musicFactory import MusicFactory
 from copy import deepcopy
 import pygame
 

@@ -1,9 +1,9 @@
 __author__ = 'Bobsleigh'
 
-from ldLib.collision.collisionTile import collisionWithTile
-from ldLib.collision.CollisionRules.CollisionRule import CollisionRule
-from ldLib.Sprites.Player.JumpState import JumpState
-from app.settings import *
+from LDEngine.ldLib.collision.collisionTile import collisionWithTile
+from LDEngine.ldLib.collision.CollisionRules.CollisionRule import CollisionRule
+from LDEngine.ldLib.Sprites.Player.JumpState import JumpState
+from LDEngine.app.settings import *
 
 class CollisionWithSpring(CollisionRule):
     def __init__(self):

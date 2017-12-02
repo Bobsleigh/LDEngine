@@ -1,8 +1,8 @@
 # input lib
 import pygame
 
-from app.settings import *
-from ldLib.GUI import Box
+from LDEngine.app.settings import *
+from LDEngine.ldLib.GUI import Box
 
 
 class InputBox(pygame.sprite.Sprite):
@@ -56,12 +56,12 @@ class Config:
         for key in look_for:
             if key[0] in options.keys(): exec('self.'+key[0]+' = options[\''+key[0]+'\']')
             else: exec('self.'+key[0]+' = '+key[1])
-            assertions.append(key[0])
+            assertions.LDEngine.append(key[0])
         for key in options.keys():
             if key not in assertions: raise ConfigError(key+' not expected as option')
 
 class Input:
-    """ A text input for pygame apps """
+    """ A text input for pygame LDEngine.apps """
     def __init__(self, **options):
         """ Options: x, y, font, color, restricted, maxlength, prompt """
         self.options = Config(options, ['x', '0'], ['y', '0'], ['font', 'pygame.font.SysFont(INPUT_BOX_FONT, INPUT_BOX_TEXT_SIZE)'],

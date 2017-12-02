@@ -1,10 +1,10 @@
 __author__ = 'Bobsleigh'
 
-from ldLib.collision.collisionTile import collisionWithTile
-from app.settings import *
-from ldLib.Sprites.Player.IdleState import IdleState
-from ldLib.Sprites.Player.ClimbingState import ClimbingState
-from ldLib.collision.CollisionRules.CollisionRule import CollisionRule
+from LDEngine.ldLib.collision.collisionTile import collisionWithTile
+from LDEngine.app.settings import *
+from LDEngine.ldLib.Sprites.Player.IdleState import IdleState
+from LDEngine.ldLib.Sprites.Player.ClimbingState import ClimbingState
+from LDEngine.ldLib.collision.CollisionRules.CollisionRule import CollisionRule
 
 class CollisionWithLadder(CollisionRule):
     def __init__(self):

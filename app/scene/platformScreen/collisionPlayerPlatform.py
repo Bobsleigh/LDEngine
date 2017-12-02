@@ -1,5 +1,5 @@
-from app.settings import *
-from app.tools.circle import Circle
+from LDEngine.app.settings import *
+from LDEngine.app.tools.circle import Circle
 import pygame
 
 class CollisionPlayerPlatform:
@@ -75,7 +75,7 @@ class CollisionPlayerPlatform:
     # def getRightTilesList(self): à terminer si besoin (décomposer le nb de pts de vérification sur le sprite selon sa taille, à place de 4 fixes)
     #     tileList = []
     #     pointNumber = self.tileHeight
-    #     tileList.append(self.map.tmxData.get_tile_gid((self.player.collisionMask.rect.right + self.player.speedx)/self.tileWidth, (self.player.collisionMask.rect.centery+10-1)/self.tileHeight, COLLISION_LAYER))
+    #     tileList.LDEngine.append(self.map.tmxData.get_tile_gid((self.player.collisionMask.rect.right + self.player.speedx)/self.tileWidth, (self.player.collisionMask.rect.centery+10-1)/self.tileHeight, COLLISION_LAYER))
 
     def leftCollision(self,sprite, map):
         tileWidth = map.tmxData.tilewidth

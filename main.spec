@@ -1,4 +1,4 @@
-# To generate .exe and .app
+# To generate .exe and .LDEngine.app
 #
 # To generate, do :
 #    Windows : pyinstaller --onefile main_local.spec

@@ -1,6 +1,6 @@
 __author__ = 'Bobsleigh'
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
 class LifeBar(pygame.sprite.Sprite):
     def __init__(self, healthMax):

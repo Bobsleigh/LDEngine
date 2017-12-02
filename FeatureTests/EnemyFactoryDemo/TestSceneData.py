@@ -1,5 +1,5 @@
 import pygame
-from ldLib.scene.SceneDataTMX import SceneDataTMX
+from LDEngine.ldLib.scene.SceneDataTMX import SceneDataTMX
 from FeatureTests.EnemyFactoryDemo.PlayerTest import PlayerTest
 from FeatureTests.EnemyFactoryDemo.TestEnemyFactory import EnemyFactory
 

@@ -1,5 +1,5 @@
 __author__ = 'Bobsleigh'
-from ldLib.scene.SceneDataTMX import SceneDataTMX
+from LDEngine.ldLib.scene.SceneDataTMX import SceneDataTMX
 from FeatureTests.TileCollisions.playerTest import PlayerTest
 
 

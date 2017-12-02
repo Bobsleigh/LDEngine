@@ -2,16 +2,16 @@ import pygame
 import os
 import math
 
-from app.settings import *
-from ldLib.collision.collisionMask import CollisionMask
-from ldLib.collision.collisionTile import collisionWithTile
-from app.tools.imageBox import *
-from ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
-from ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
-from ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
-from ldLib.collision.CollisionRules.CollisionWithLadder import CollisionWithLadder
-from ldLib.collision.CollisionRules.CollisionWithNothing import CollisionWithNothing
-from ldLib.Sprites.Player.IdleState import IdleState
+from LDEngine.app.settings import *
+from LDEngine.ldLib.collision.collisionMask import CollisionMask
+from LDEngine.ldLib.collision.collisionTile import collisionWithTile
+from LDEngine.app.tools.imageBox import *
+from LDEngine.ldLib.collision.CollisionRules.CollisionWithSolid import CollisionWithSolid
+from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpring import CollisionWithSpring
+from LDEngine.ldLib.collision.CollisionRules.CollisionWithSpike import CollisionWithSpike
+from LDEngine.ldLib.collision.CollisionRules.CollisionWithLadder import CollisionWithLadder
+from LDEngine.ldLib.collision.CollisionRules.CollisionWithNothing import CollisionWithNothing
+from LDEngine.ldLib.Sprites.Player.IdleState import IdleState
 
 class PlayerTest(pygame.sprite.Sprite):
     def __init__(self, x, y, sceneData, max_health=10):
@@ -71,11 +71,11 @@ class PlayerTest(pygame.sprite.Sprite):
 
         self.collisionMask = CollisionMask(self.rect.x, self.rect.y, self.rect.width, self.rect.height)
         self.collisionRules = []
-        self.collisionRules.append(CollisionWithNothing())  # Gotta be first in the list to work properly
-        self.collisionRules.append(CollisionWithSolid())
-        self.collisionRules.append(CollisionWithSpring())
-        self.collisionRules.append(CollisionWithSpike())
-        self.collisionRules.append(CollisionWithLadder())
+        self.collisionRules.LDEngine.append(CollisionWithNothing())  # Gotta be first in the list to work properly
+        self.collisionRules.LDEngine.append(CollisionWithSolid())
+        self.collisionRules.LDEngine.append(CollisionWithSpring())
+        self.collisionRules.LDEngine.append(CollisionWithSpike())
+        self.collisionRules.LDEngine.append(CollisionWithLadder())
 
         self._state = IdleState()
         # self.nextState = None

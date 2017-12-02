@@ -1,8 +1,8 @@
 import pygame
 
-from ldLib.scene.EventHandler import EventHandler
-from ldLib.scene.Drawer import Drawer
-from app.settings import *
+from LDEngine.ldLib.scene.EventHandler import EventHandler
+from LDEngine.ldLib.scene.Drawer import Drawer
+from LDEngine.app.settings import *
 
 
 class Scene:

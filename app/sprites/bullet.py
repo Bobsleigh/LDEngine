@@ -1,9 +1,9 @@
 import os
 import pygame
 
-from app.sprites.enemy.enemy import Enemy
-from app.scene.platformScreen.collisionPlayerPlatform import *
-# from app.tool.animation import Animation
+from LDEngine.app.sprites.enemy.enemy import Enemy
+from LDEngine.app.scene.platformScreen.collisionPlayerPlatform import *
+# from LDEngine.app.tool.animation import Animation
 
 
 class Bullet(Enemy):
@@ -13,10 +13,10 @@ class Bullet(Enemy):
         self.name = "bullet"
 
         self.imageBulletRight = list()
-        self.imageBulletRight.append(pygame.image.load(os.path.join('img', 'Bullet.png')))
+        self.imageBulletRight.LDEngine.append(pygame.image.load(os.path.join('img', 'Bullet.png')))
 
         self.imageBulletLeft = list()
-        self.imageBulletLeft.append(pygame.image.load(os.path.join('img', 'Bullet.png')))
+        self.imageBulletLeft.LDEngine.append(pygame.image.load(os.path.join('img', 'Bullet.png')))
 
         self.image = self.imageBulletRight[0]
 

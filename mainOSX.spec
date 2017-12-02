@@ -1,4 +1,4 @@
-# Fichier pour générer l'application autonome Darwin
+# Fichier pour générer l'LDEngine.application autonome Darwin
 # Pour lancer la création des binaires :
 #        OSX : pyinstaller --onefile mainOSX.spec
 # le résultat se trouve dans /dist -> mainOSX
@@ -38,7 +38,7 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           console=False )
-app = BUNDLE(exe,
-             name='mainOSX.app',
+LDEngine.app = BUNDLE(exe,
+             name='mainOSX.LDEngine.app',
              icon=None,
              bundle_identifier=None)

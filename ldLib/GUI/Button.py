@@ -1,5 +1,5 @@
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
 class Button(pygame.sprite.Sprite):
     def __init__(self, pos, size, text, callback):

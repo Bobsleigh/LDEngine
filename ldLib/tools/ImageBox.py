@@ -1,5 +1,5 @@
 import pygame
-from app.settings import *
+from LDEngine.app.settings import *
 
 class ImageBox:
     def rectSurface(self, dimension, color=BLACK, border=0,borderColor=BLACK):

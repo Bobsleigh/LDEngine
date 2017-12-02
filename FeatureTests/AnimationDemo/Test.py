@@ -11,9 +11,9 @@ import sys
 import pygame
 from FeatureTests.AnimationDemo.AnimationDemoSceneData import AnimationDemoSceneData
 from FeatureTests.AnimationDemo.AnimationDemoLogicHandler import AnimationDemoLogicHandler
-from ldLib.scene.Scene import Scene
-from ldLib.scene.GameData import GameData
-from app.settings import *
+from LDEngine.ldLib.scene.Scene import Scene
+from LDEngine.ldLib.scene.GameData import GameData
+from LDEngine.app.settings import *
 
 if __name__ == '__main__':
     #Code to check if the code is running from a PyInstaller --onefile .exe

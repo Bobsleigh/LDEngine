@@ -1,7 +1,7 @@
 import pygame
 import pyscroll
 
-from app.settings import *
+from LDEngine.app.settings import *
 
 class Drawer:
     def __init__(self):
