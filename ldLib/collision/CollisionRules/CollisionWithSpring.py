@@ -22,5 +22,5 @@ class CollisionWithSpring(CollisionRule):
         if ((sprite.collisionMask.rect.bottom - 1) % sprite.mapData.tmxData.tileheight) <= sprite.mapData.tmxData.tileheight/2: # Check if the bottom of the sprite collides with the higher half of the spring
             if collisionWithTile(sprite, SPRING, sprite.mapData):
                 if sprite.speedy > 0:
-                    sprite.speedy = -sprite.springJumpSpeed
+                    sprite.onSpring()
                     sprite.state = JumpState()

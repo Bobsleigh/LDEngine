@@ -14,3 +14,5 @@ class SceneData:
 
         self.player = None
         self.camera = None
+
+        self.playSounds = True
