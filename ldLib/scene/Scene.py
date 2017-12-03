@@ -6,7 +6,7 @@ from LDEngine.app.settings import *
 
 
 class Scene:
-    def __init__(self,screen,gameData,logicHandler, drawer = Drawer(), musicHandler = None):
+    def __init__(self,screen,gameData,logicHandler, eventHandler = EventHandler(), drawer = Drawer(), musicHandler = None):
         # Screen
         self.gameData = gameData
         self.nextScene = None
@@ -26,7 +26,7 @@ class Scene:
         else:
             self.camera = None
 
-        self.eventHandler = EventHandler()
+        self.eventHandler = eventHandler
         self.logicHandler = logicHandler
         self.drawer = drawer
         self.musicHandler = musicHandler
