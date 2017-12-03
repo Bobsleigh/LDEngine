@@ -44,6 +44,7 @@ class Bullet(Enemy):
 
     def update(self):
         self.rect.x += self.speedx
+        self.rect.y += self.speedy
         if self.animation is not None :
            next(self.animation)
         self.updateCollisionMask()
