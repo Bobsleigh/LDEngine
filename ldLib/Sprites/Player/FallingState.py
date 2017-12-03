@@ -14,9 +14,6 @@ class FallingState(PlayerState):
             elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
                 sprite.updateSpeedLeft()
                 sprite.leftPressed = True
-            elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
-                sprite.updateSpeedDown()
-                sprite.downPressed = True
             elif event.key == pygame.K_SPACE:
                 sprite.spacePressed = True
             elif event.key == pygame.K_LSHIFT:
@@ -49,7 +46,7 @@ class FallingState(PlayerState):
                 sprite.rightMousePressed = False
 
     def enter(self, sprite):
-        pass
+        sprite.speedy = 0
 
     def exit(self, sprite):
         pass

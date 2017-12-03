@@ -17,9 +17,6 @@ class IdleState(PlayerState):
             elif event.key == pygame.K_LEFT or event.key == pygame.K_a:
                 sprite.updateSpeedLeft()
                 sprite.leftPressed = True
-            elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
-                sprite.updateSpeedDown()
-                sprite.downPressed = True
             elif event.key == pygame.K_SPACE:
                 sprite.jump()
                 sprite.spacePressed = True
