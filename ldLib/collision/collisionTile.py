@@ -92,6 +92,20 @@ def collisionWithTile(sprite, tileType, map):
     else:
         return False
 
+def collisionCenterWithTile(sprite, tileType, map):
+    tileWidth = map.tmxData.tilewidth
+    tileHeight = map.tmxData.tileheight
+
+    x = (sprite.collisionMask.rect.left + sprite.collisionMask.rect.right)/2
+    y = (sprite.collisionMask.rect.top + sprite.collisionMask.rect.bottom)/2
+
+    centerGid = map.tmxData.get_tile_gid(x/tileWidth, y/tileHeight, COLLISION_LAYER)
+
+    if centerGid == tileType:
+        return True
+    else:
+        return False
+
 def collisionExclusivelyWithTile(sprite, tileType, map):
     tileWidth = map.tmxData.tilewidth
     tileHeight = map.tmxData.tileheight

@@ -1,9 +1,10 @@
 __author__ = 'Bobsleigh'
 
 from LDEngine.ldLib.collision.collisionTile import collisionWithTile
-from LDEngine.app.settings import *
 from LDEngine.ldLib.Sprites.Player.IdleState import IdleState
+from LDEngine.ldLib.Sprites.Player.ClimbingState import ClimbingState
 from LDEngine.ldLib.collision.CollisionRules.CollisionRule import CollisionRule
+from LDEngine.app.settings import *
 
 class CollisionWithSolid(CollisionRule):
     def __init__(self):
@@ -21,7 +22,7 @@ class CollisionWithSolid(CollisionRule):
         if collisionWithTile(sprite, SOLID, sprite.mapData):
             if sprite.speedy > 0:
                 sprite.y = ((sprite.y + sprite.collisionMask.rect.height) // sprite.mapData.tmxData.tileheight) * sprite.mapData.tmxData.tileheight - sprite.collisionMask.rect.height
-                if not isinstance(sprite.state, IdleState):
+                if not isinstance(sprite.state, IdleState) and not isinstance(sprite.state, ClimbingState):
                     sprite.state = IdleState()
             else:
                 sprite.y = (sprite.y // sprite.mapData.tmxData.tileheight + 1) * sprite.mapData.tmxData.tileheight
