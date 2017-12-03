@@ -43,10 +43,15 @@ class Scene:
                 self.drawer.draw(self.screen, self.sceneData.allSprites, self.sceneData.spritesHUD, self.sceneData.spritesBackGround, self.player)
             else:
                 self.drawer.draw(self.screen, self.sceneData.camera, self.sceneData.spritesHUD, self.sceneData.spritesBackGround, self.player)
+
+            if self.logicHandler.gameOver == True:
+                self.sceneData.nextScene = WIN_SCREEN
+
             self.nextScene = self.sceneData.nextScene
 
             if self.nextScene != None:
                 self.beforeLeavingScene()
+
 
     def run(self):
         self.mainLoop()
