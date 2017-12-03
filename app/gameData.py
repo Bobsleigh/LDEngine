@@ -3,6 +3,7 @@ from LDEngine.app.settings import *
 #To initialize my pet
 import os
 import pygame
+from music.MusicHandler import MusicHandler
 
 
 # All the global data for the game and player
@@ -21,3 +22,6 @@ class GameData:
         self.scene = scene
 
         self.mapData = None
+
+        self.MusicHandler = MusicHandler("mainMenu.ogg")
+        self.MusicHandler.play()

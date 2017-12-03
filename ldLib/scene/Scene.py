@@ -30,6 +30,7 @@ class Scene:
         self.logicHandler = logicHandler
         self.drawer = drawer
         self.musicHandler = musicHandler
+        self.musicIsOff = False
 
         if self.musicHandler != None:
             self.musicHandler.play()
@@ -52,6 +53,12 @@ class Scene:
             if self.nextScene != None:
                 self.beforeLeavingScene()
 
+            if not self.sceneData.playSounds and not self.musicIsOff:
+                self.gameData.MusicHandler.stop()
+                self.musicIsOff = True
+            elif self.sceneData.playSounds and self.musicIsOff:
+                self.gameData.MusicHandler.play()
+                self.musicIsOff = False
 
     def run(self):
         self.mainLoop()
@@ -61,5 +68,3 @@ class Scene:
         self.sceneData.beforeLeavingScene(self.screen)
         if self.musicHandler != None:
             self.musicHandler.stop()
-
-
