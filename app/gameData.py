@@ -1,9 +1,5 @@
-from LDEngine.app.settings import *
-
 #To initialize my pet
-import os
-import pygame
-from music.MusicHandler import MusicHandler
+from app.MusicHandler import MusicHandler
 
 
 # All the global data for the game and player
